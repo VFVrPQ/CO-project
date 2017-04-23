@@ -1,0 +1,218 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+de:/modeltech64_10.4/examples
+vADDER
+Z0 !s110 1492849929
+!i10b 1
+!s100 =m8KPDS8z;bzci8[SkKI51
+InB66lkZUQP;jY]F4Cz7kF2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dE:/modeltech64_10.4/examples/project1
+w1492844414
+8E:/modeltech64_10.4/examples/project1/ADDER.v
+FE:/modeltech64_10.4/examples/project1/ADDER.v
+L0 3
+Z3 OL;L;10.4;61
+r1
+!s85 0
+31
+!s108 1492849929.205000
+!s107 E:/modeltech64_10.4/examples/project1/ADDER.v|
+!s90 -reportprogress|300|-work|work|-novopt|-stats=none|E:/modeltech64_10.4/examples/project1/ADDER.v|
+!i113 1
+Z4 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+n@a@d@d@e@r
+vADDER_TB
+R0
+!i10b 1
+!s100 lb;O=emcM<ojTf[SK0<hn2
+ICV21LkJC8bzh>8403?HnQ0
+R1
+R2
+w1492843862
+8E:/modeltech64_10.4/examples/project1/ADDER_TB.v
+FE:/modeltech64_10.4/examples/project1/ADDER_TB.v
+L0 2
+R3
+r1
+!s85 0
+31
+!s108 1492849929.351000
+!s107 E:/modeltech64_10.4/examples/project1/ADDER_TB.v|
+!s90 -reportprogress|300|-work|work|-novopt|-stats=none|E:/modeltech64_10.4/examples/project1/ADDER_TB.v|
+!i113 1
+R4
+n@a@d@d@e@r_@t@b
+vALU
+!s110 1492850281
+!i10b 1
+!s100 iW<n<HezdJSFjbN9>0MB21
+Ih1=U^GiG`4=g]NJHCQIDQ1
+R1
+R2
+w1492850250
+8E:\modeltech64_10.4\examples\project1\ALU.v
+FE:\modeltech64_10.4\examples\project1\ALU.v
+L0 3
+R3
+r1
+!s85 0
+31
+!s108 1492850281.302000
+!s107 E:\modeltech64_10.4\examples\project1\ALU.v|
+!s90 -reportprogress|300|-work|work|-novopt|-stats=none|E:\modeltech64_10.4\examples\project1\ALU.v|
+!i113 1
+R4
+n@a@l@u
+vALU_TB
+R0
+!i10b 1
+!s100 DN1]h3@FNoERkeb:Qij0l3
+IGPPK]8D<P>V5O;QH90?G>2
+R1
+R2
+w1492849918
+8E:/modeltech64_10.4/examples/project1/ALU_TB.v
+FE:/modeltech64_10.4/examples/project1/ALU_TB.v
+L0 2
+R3
+r1
+!s85 0
+31
+!s108 1492849929.458000
+!s107 E:/modeltech64_10.4/examples/project1/ALU_TB.v|
+!s90 -reportprogress|300|-work|work|-novopt|-stats=none|E:/modeltech64_10.4/examples/project1/ALU_TB.v|
+!i113 1
+R4
+n@a@l@u_@t@b
+vMUX2
+Z5 !s110 1492849928
+!i10b 1
+!s100 @i`e;2h633N?i4CT80QUa3
+IK2ZoA9;^c6mdb_c27TIlW1
+R1
+R2
+w1492822888
+8E:/modeltech64_10.4/examples/project1/MUX2.v
+FE:/modeltech64_10.4/examples/project1/MUX2.v
+L0 2
+R3
+r1
+!s85 0
+31
+!s108 1492849928.913000
+!s107 E:/modeltech64_10.4/examples/project1/MUX2.v|
+!s90 -reportprogress|300|-work|work|-novopt|-stats=none|E:/modeltech64_10.4/examples/project1/MUX2.v|
+!i113 1
+R4
+n@m@u@x2
+vMUX3
+R0
+!i10b 1
+!s100 nAWB6OVZ65Z6E=13=:5Nn1
+IXI;N=Vz:PVUjoC?5g8zJ21
+R1
+R2
+w1492823452
+8E:/modeltech64_10.4/examples/project1/MUX3.v
+FE:/modeltech64_10.4/examples/project1/MUX3.v
+L0 2
+R3
+r1
+!s85 0
+31
+!s108 1492849929.097000
+!s107 E:/modeltech64_10.4/examples/project1/MUX3.v|
+!s90 -reportprogress|300|-work|work|-novopt|-stats=none|E:/modeltech64_10.4/examples/project1/MUX3.v|
+!i113 1
+R4
+n@m@u@x3
+vs
+R5
+!i10b 1
+!s100 Z;HR0YA>4?QT4aK_7maiA2
+I7?gM<VMz[=gH;LV=MNj882
+R1
+R2
+w1492795653
+8E:/modeltech64_10.4/examples/project1/s.v
+FE:/modeltech64_10.4/examples/project1/s.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1492849928.734000
+!s107 E:/modeltech64_10.4/examples/project1/s.v|
+!s90 -reportprogress|300|-work|work|-novopt|-stats=none|E:/modeltech64_10.4/examples/project1/s.v|
+!i113 1
+R4
+vSignExt1
+R0
+!i10b 1
+!s100 cO:1LO5kJZZGCPJ8V69QN1
+IoJ`ka5W]@:Zde:9^2LYOO3
+R1
+R2
+w1492828413
+8E:/modeltech64_10.4/examples/project1/SignExt1.v
+FE:/modeltech64_10.4/examples/project1/SignExt1.v
+L0 2
+R3
+r1
+!s85 0
+31
+!s108 1492849929.280000
+!s107 E:/modeltech64_10.4/examples/project1/SignExt1.v|
+!s90 -reportprogress|300|-work|work|-novopt|-stats=none|E:/modeltech64_10.4/examples/project1/SignExt1.v|
+!i113 1
+R4
+n@sign@ext1
+vSignExt1_TB
+R0
+!i10b 1
+!s100 FM5gSSWngLh3O;3Gjf?6z2
+ICM;dg`4ihEl[[EE6;DE>P3
+R1
+R2
+w1492831340
+8E:/modeltech64_10.4/examples/project1/SignExt1_TB.v
+FE:/modeltech64_10.4/examples/project1/SignExt1_TB.v
+L0 2
+R3
+r1
+!s85 0
+31
+!s108 1492849929.420000
+!s107 E:/modeltech64_10.4/examples/project1/SignExt1_TB.v|
+!s90 -reportprogress|300|-work|work|-novopt|-stats=none|E:/modeltech64_10.4/examples/project1/SignExt1_TB.v|
+!i113 1
+R4
+n@sign@ext1_@t@b
+vtestbench
+R5
+!i10b 1
+!s100 R4n81_nCe4YSHP]3hU@`n0
+InEfi[1c[dZED0bdX4>WNL1
+R1
+R2
+w1492831044
+8E:/modeltech64_10.4/examples/project1/testbench.v
+FE:/modeltech64_10.4/examples/project1/testbench.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1492849928.680000
+!s107 E:/modeltech64_10.4/examples/project1/testbench.v|
+!s90 -reportprogress|300|-work|work|-novopt|-stats=none|E:/modeltech64_10.4/examples/project1/testbench.v|
+!i113 1
+R4

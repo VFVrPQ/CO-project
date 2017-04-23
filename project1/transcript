@@ -1,0 +1,9 @@
+# Reading C:/modeltech_6.5g/tcl/vsim/pref.tcl 
+# ** Error: (vish-42) Unsupported ModelSim library format for "E:\modeltech64_10.4\examples\project1\work". (Format: 4)
+# ** Error: License checkout has been disallowed because
+# only one session is allowed to run on an uncounted nodelock
+# license and an instance of ModelSim is already running with a
+# nodelocked license on this machine.
+# Unable to checkout a viewer license necessary for use of the ModelSim graphical user interface.  Vsim is closing.
+# ** Error: (vish-42) Unsupported ModelSim library format for "E:\modeltech64_10.4\examples\project1\work". (Format: 4)
+# OpenFile E:/modeltech64_10.4/examples/project1/ALU_TB.v 

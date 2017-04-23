@@ -1,0 +1,73 @@
+E:/modeltech64_10.4/examples/project1/ADDER_TB.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project1/ADDER_TB.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module ADDER_TB
+
+Top level modules:
+	ADDER_TB
+
+} {} {}} E:/modeltech64_10.4/examples/project1/MUX3.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project1/MUX3.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module MUX3
+
+Top level modules:
+	MUX3
+
+} {} {}} E:/modeltech64_10.4/examples/project1/ALU.v {1 {vlog -work work -novopt -stats=none {E:\modeltech64_10.4\examples\project1\ALU.v}
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} E:/modeltech64_10.4/examples/project1/ALU_TB.v {2 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project1/ALU_TB.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module ALU_TB
+** Warning: E:/modeltech64_10.4/examples/project1/ALU_TB.v(23): (vlog-2252) Missing test expr. in "FOR" statement.
+
+
+Top level modules:
+	ALU_TB
+
+} {} {}} E:/modeltech64_10.4/examples/project1/SignExt1.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project1/SignExt1.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module SignExt1
+
+Top level modules:
+	SignExt1
+
+} {} {}} E:/modeltech64_10.4/examples/project1/s.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project1/s.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module s
+
+Top level modules:
+	s
+
+} {} {}} E:/modeltech64_10.4/examples/project1/ADDER.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project1/ADDER.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module ADDER
+
+Top level modules:
+	ADDER
+
+} {} {}} E:/modeltech64_10.4/examples/project1/SignExt1_TB.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project1/SignExt1_TB.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module SignExt1_TB
+
+Top level modules:
+	SignExt1_TB
+
+} {} {}} E:/modeltech64_10.4/examples/project1/testbench.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project1/testbench.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module testbench
+
+Top level modules:
+	testbench
+
+} {} {}} E:/modeltech64_10.4/examples/project1/MUX2.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project1/MUX2.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module MUX2
+
+Top level modules:
+	MUX2
+
+} {} {}}
