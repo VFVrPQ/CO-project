@@ -4,9 +4,9 @@ module testbench();
 	initial begin
 		clk = 0;
 		rst = 1;
-		#12 rst = 0;
+		#60 rst = 0;
 	end
-	always #10 clk = ~clk;
+	always #50 clk = ~clk;
 
 	mips mips(clk,rst);
 endmodule 
