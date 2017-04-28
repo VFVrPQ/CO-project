@@ -5,6 +5,13 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	rf
 
+} {} {}} E:/modeltech64_10.4/examples/project_1/datapath/dm.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project_1/datapath/dm.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module dm_4k
+
+Top level modules:
+	dm_4k
+
 } {} {}} E:/modeltech64_10.4/examples/project_1/datapath/npc.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project_1/datapath/npc.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module npc
@@ -12,12 +19,26 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	npc
 
-} {} {}} E:/modeltech64_10.4/examples/project_1/datapath/dm.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project_1/datapath/dm.v
+} {} {}} E:/modeltech64_10.4/examples/project_1/datapath/ALU.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project_1/datapath/ALU.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module dm_4k
+-- Compiling module ALU
 
 Top level modules:
-	dm_4k
+	ALU
+
+} {} {}} E:/modeltech64_10.4/examples/project_1/datapath/im.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project_1/datapath/im.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module im_4k
+
+Top level modules:
+	im_4k
+
+} {} {}} E:/modeltech64_10.4/examples/project_1/datapath/MUX.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project_1/datapath/MUX.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module MUX2
+
+Top level modules:
+	MUX2
 
 } {} {}} E:/modeltech64_10.4/examples/project_1/datapath/SignExt.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project_1/datapath/SignExt.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
@@ -27,34 +48,6 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	SignExt1
 	SignExt16
-
-} {} {}} E:/modeltech64_10.4/examples/project_1/datapath/MUX.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project_1/datapath/MUX.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module MUX2
-
-Top level modules:
-	MUX2
-
-} {} {}} E:/modeltech64_10.4/examples/project_1/datapath/im.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project_1/datapath/im.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module im_4k
-
-Top level modules:
-	im_4k
-
-} {} {}} E:/modeltech64_10.4/examples/project_1/datapath/ALU.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project_1/datapath/ALU.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module ALU
-
-Top level modules:
-	ALU
-
-} {} {}} E:/modeltech64_10.4/examples/project_1/testbench.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project_1/testbench.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module testbench
-
-Top level modules:
-	testbench
 
 } {} {}} E:/modeltech64_10.4/examples/project_1/control/ctrl.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project_1/control/ctrl.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
