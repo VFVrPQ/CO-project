@@ -55,7 +55,7 @@ module ctrl(op,func,RegWr,RegDst,ExtOp,ALUsrc,Branch,Jump,ALUctr,MemWr,MemtoReg)
 			assign RegDst = 0;//x
 			assign ALUsrc = 1;
 				
-			assign MemtoReg = 1;//x
+			assign MemtoReg = 0;//x
 			assign RegWr = 0;
 			assign MemWr = 1;
 			assign ExtOp = 1;
@@ -68,7 +68,7 @@ module ctrl(op,func,RegWr,RegDst,ExtOp,ALUsrc,Branch,Jump,ALUctr,MemWr,MemtoReg)
 			assign RegDst = 0;//x
 			assign ALUsrc = 0;
 				
-			assign MemtoReg = 1;//x
+			assign MemtoReg = 0;//x
 			assign RegWr = 0;
 			assign MemWr = 1;
 			assign ExtOp = 1;
