@@ -1,5 +1,4 @@
 
-//Overflow = c(n)^c(n-1) not complete
 module ADDER #(parameter WIDTH = 32)
 	(A,B,Cin,Carry,Zero,Sign,Result);
 

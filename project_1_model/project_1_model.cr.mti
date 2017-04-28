@@ -61,19 +61,19 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	MUX2
 
-} {} {}} E:/modeltech64_10.4/examples/project_1_model/pc.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project_1_model/pc.v
+} {} {}} E:/modeltech64_10.4/examples/project_1_model/pc.v {1 {vlog -work work -novopt -stats=none {E:\modeltech64_10.4\examples\project_1_model\pc.v}
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module pc
 
 Top level modules:
 	pc
 
-} {} {}} E:/modeltech64_10.4/examples/project_1_model/rf.v {1 {vlog -work work -novopt -stats=none {E:\modeltech64_10.4\examples\project_1_model\rf.v}
+} {} {}} E:/modeltech64_10.4/examples/project_1_model/ADDER.v {1 {vlog -work work -novopt -stats=none {E:\modeltech64_10.4\examples\project_1_model\ADDER.v}
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module rf
+-- Compiling module ADDER
 
 Top level modules:
-	rf
+	ADDER
 
 } {} {}} E:/modeltech64_10.4/examples/project_1_model/testbench.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project_1_model/testbench.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
@@ -82,11 +82,11 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	testbench
 
-} {} {}} E:/modeltech64_10.4/examples/project_1_model/ADDER.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project_1_model/ADDER.v
+} {} {}} E:/modeltech64_10.4/examples/project_1_model/rf.v {1 {vlog -work work -novopt -stats=none {E:\modeltech64_10.4\examples\project_1_model\rf.v}
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module ADDER
+-- Compiling module rf
 
 Top level modules:
-	ADDER
+	rf
 
 } {} {}}

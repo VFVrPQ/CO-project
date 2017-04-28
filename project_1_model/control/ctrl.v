@@ -1,18 +1,10 @@
 //complete add,sub,subu,slt,sltu ; ori,addiu,lw,sw,beq ; J
-//R:add(32),sub(34),slt(42),and(36),or(37)
-//  
-//add:  add, lw, sw	000
-//sub:  sub, beq	001
-//and:  and		010
-//or :  or 		011
-//slt:  slt             100
+
 module ctrl(op,RegWr,RegDst,ExtOp,ALUsrc,Branch,Jump,MemWr,MemtoReg);
 	input [5:0] op;
-	output reg RegWr,RegDst,ExtOp,ALUsrc,Branch,Jump,MemWr,MemtoReg;//WrEn
-	//output reg [2:0] ALUctr;
+	output reg RegWr,RegDst,ExtOp,ALUsrc,Branch,Jump,MemWr,MemtoReg;
 
 	parameter R = 6'b000000, ORI = 6'b001101, ADDIU = 6'b001001, LW = 6'b100011, SW = 6'b101011, BEQ = 6'b000100, J = 6'b000010;
-        //parameter ADD = 6'b100000, SUB = 6'b100010, SLT = 6'b101010, AND = 6'b100100 , OR = 6'b100101;
 
 	always @(*)begin
 	case (op)

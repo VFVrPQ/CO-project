@@ -7,7 +7,7 @@ module pc(NPC,Clk,Reset,PC);
 	always @(posedge Clk)
 	begin
 		if (Reset == 1) 
-			PC <= 30'b0000_0000_0000_0000_0011_0000_0000_00;//true?
+			PC <= 30'b0000_0000_0000_0000_0011_0000_0000_00;
 		else PC <= NPC;
 	end
 endmodule
