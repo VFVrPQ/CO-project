@@ -19,6 +19,13 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	ALUctrl
 
+} {} {}} E:/modeltech64_10.4/examples/project_1_model/dm.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project_1_model/dm.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module dm_4k
+
+Top level modules:
+	dm_4k
+
 } {} {}} E:/modeltech64_10.4/examples/project_1_model/Ext.v {1 {vlog -work work -novopt -stats=none {E:\modeltech64_10.4\examples\project_1_model\Ext.v}
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module Ext
@@ -32,13 +39,6 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 
 Top level modules:
 	mips
-
-} {} {}} E:/modeltech64_10.4/examples/project_1_model/dm.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project_1_model/dm.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module dm_4k
-
-Top level modules:
-	dm_4k
 
 } {} {}} E:/modeltech64_10.4/examples/project_1_model/npc.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project_1_model/npc.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
@@ -68,6 +68,13 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	pc
 
+} {} {}} E:/modeltech64_10.4/examples/project_1_model/rf.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project_1_model/rf.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module rf
+
+Top level modules:
+	rf
+
 } {} {}} E:/modeltech64_10.4/examples/project_1_model/ADDER.v {1 {vlog -work work -novopt -stats=none {E:\modeltech64_10.4\examples\project_1_model\ADDER.v}
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module ADDER
@@ -81,12 +88,5 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 
 Top level modules:
 	testbench
-
-} {} {}} E:/modeltech64_10.4/examples/project_1_model/rf.v {1 {vlog -work work -novopt -stats=none {E:\modeltech64_10.4\examples\project_1_model\rf.v}
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module rf
-
-Top level modules:
-	rf
 
 } {} {}}
