@@ -1,36 +1,0 @@
-带冒险的流水
-========
-
-
-数据冒险
-------
-
-> **Data hazards** when
-> - EX/MEM.RegisterRd = ID/EX.RegisterRs
-> - EX/MEM.RegisterRd = ID/EX.RegisterRt
-> - MEM/WB.RegisterRd = ID/EX.RegisterRs
-> -  MEM/WB.RegisterRd = ID/EX.RegisterRt
-
-----
-
-> **EX hazard**
-> - if (EX/MEM.RegWrite and (EX/MEM.RegisterRd ≠ 0)    and (EX/MEM.RegisterRd = ID/EX.RegisterRs))  ForwardA = 10
-> - if (EX/MEM.RegWrite and (EX/MEM.RegisterRd ≠ 0)    and (EX/MEM.RegisterRd = ID/EX.RegisterRt))  ForwardB = 10
-
------
-> **MEM hazard**
-> - if (MEM/WB.RegWrite and (MEM/WB.RegisterRd ≠ 0)    and not (EX/MEM.RegWrite and (EX/MEM.RegisterRd ≠ 0)                 and (EX/MEM.RegisterRd = ID/EX.RegisterRs))    and (MEM/WB.RegisterRd = ID/EX.RegisterRs))  ForwardA = 01
-> - if (MEM/WB.RegWrite and (MEM/WB.RegisterRd ≠ 0)    and not (EX/MEM.RegWrite and (EX/MEM.RegisterRd ≠ 0)                 and (EX/MEM.RegisterRd = ID/EX.RegisterRt))    and (MEM/WB.RegisterRd = ID/EX.RegisterRt))  ForwardB = 01
-
-----
-这里的RegisterRd 对于R指令是ins[15:11]，对于I指令是ins[20:16]
-
-> **Load-use hazard**
-> - if ID/EX.MemRead and  ((ID/EX.RegisterRt = IF/ID.RegisterRs) or   (ID/EX.RegisterRt = IF/ID.RegisterRt))  则存在
->  - ID/EX的控制信号为0，阻止PC和IF/ID寄存器的更新
-
-----
-
-> **Branches hazard**
-> -  
-
