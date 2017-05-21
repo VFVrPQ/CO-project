@@ -86,7 +86,8 @@ module mips(clk, rst) ;
 	//get instruction
 	im_4k 	a_im_4k( .addr(PC[31:2]), .dout(if_ins));
   //if_id
-  if_id a_if_id(clk,if_flush,hazard,if_ins,id_ins,PC_plus_4,id_PC_plus_4);
+  //如果是j或者beq就要冲刷，hazard要保持指令
+  if_id a_if_id(clk,(if_ins[31:26] == 6'b000010),if_flush,hazard,if_ins,id_ins,PC_plus_4,id_PC_plus_4); // (if_ins[31:26] == 6'b000010) J 指令
   assign id_op    = id_ins[31:26];
   assign id_Ra    = id_ins[25:21];
   assign id_Rb    = id_ins[20:16];

@@ -1,5 +1,6 @@
-module if_id(Clk,if_flush,hazard,if_ins,id_ins,PC_plus_4,id_PC_plus_4);
+module if_id(Clk,id_Jump,if_flush,hazard,if_ins,id_ins,PC_plus_4,id_PC_plus_4);
     input       Clk;
+    input       id_Jump;
     input[31:0] if_ins;
     input       hazard;
     input       if_flush;
@@ -14,7 +15,7 @@ module if_id(Clk,if_flush,hazard,if_ins,id_ins,PC_plus_4,id_PC_plus_4);
     end
     always @(posedge Clk)
     begin
-      if (if_flush) begin
+      if (if_flush || id_Jump) begin //如果是branch或者Jump就冲刷
           id_ins       <= 32'd0;
           id_PC_plus_4 <= PC_plus_4;
       end else if (hazard) begin
