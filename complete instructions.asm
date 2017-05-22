@@ -67,12 +67,15 @@ add  $t3, $zero, $zero
 add  $t4, $zero, $zero
 
 ##相邻的branch
+beq  $t1, $t1, test0   #跳转，   最基本的branch操作
+j    begin
+test0:
 add  $t2, $t1, $t0     #$t2 = 22
 beq  $t2, $t1, test1   #不跳转，  branch在第二个周期（ID）判断，需要上一条指令执行完第三个周期（EX），所以需要插入气泡
 sub  $t3, $t1, $t0     #$t3 = 8
 sub  $t4, $t1, $t0     #$t4 = 8
-test1:
 beq  $t3, $t4, test2   #跳转，    判断相邻两条指令的情况
+test1:
 j    begin
 ##lw-branch的情况
 test2:
@@ -89,9 +92,6 @@ lw  $t5, 100($zero)    #$t5 = 15
 beq $t5, $t5, test5    #跳转,lw,branch不隔指令(要插入两个空气泡，lw后插一个，branch前插一个)
 j   begin
 test5:
-
-
-
 
 #use-load冒险（转发单元在I指令可能存在的问题。。只针对forwardB,传入alu的busB）
 #只要非R指令，alu的busB是imm16就好
