@@ -7,7 +7,7 @@ module im_4k( addr, dout ) ;
 	
 	initial 
 	begin
-		$readmemh("code_1.txt",im);
+		$readmemh("code.txt",im);
 
 		//dout = 32'd0;
 	end

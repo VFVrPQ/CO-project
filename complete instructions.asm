@@ -62,6 +62,7 @@ sub  $t4, $t2, $t0   #t4 = 8,  load-use冒险2（结构冒险），和lw相隔一个气泡和一个
 
 #branch
 #初始 $t0 = 7, $t1 = 15, 其余为0
+sw   $zero, 100($zero)  #新增
 add  $t2, $zero, $zero
 add  $t3, $zero, $zero
 add  $t4, $zero, $zero
@@ -97,6 +98,7 @@ test5:
 #只要非R指令，alu的busB是imm16就好
 #初始 $t0 = 7, $t1 = 15, 其余为0
 #基于上面的冒险都已解决， 不考虑指令间的间隔
+sw   $zero, 100($zero)  #新增
 add  $t2, $zero, $zero
 add  $t3, $zero, $zero
 add  $t4, $zero, $zero
