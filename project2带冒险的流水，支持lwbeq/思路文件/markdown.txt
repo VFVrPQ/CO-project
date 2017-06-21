@@ -1,0 +1,257 @@
+基本的流水线
+=============
+
+所有指令
+----------
+
+顺序执行，add,sub,and,or,slt,lw,sw共七个指令，不考虑beq和j指令
+
+其中add,sub,and,or,slt,lw的rd再次使用时要至少2个指令间隔
+
+首地址
+--------
+
+指令地址：0x00003000 0011 0000 0000 0000
+数据地址：0x00000000
+
+PC_plus_4： 因为我取的是[31:2]，所以PC_plus_4 = PC + 1 而不是加4
+
+问题1：非阻塞赋值
+-----------
+
+在中间寄存器中，应使用非阻塞赋值（不立即改变当前值）。上一次的运算结果传递到下一次后再得到新的运算结果。
+需要使用非阻塞赋值，否则会变成单周期。
+
+带冒险的流水
+========
+
+
+数据冒险
+------
+
+> **Data hazards** when
+> 
+> - EX/MEM.RegisterRd = ID/EX.RegisterRs
+> - EX/MEM.RegisterRd = ID/EX.RegisterRt
+> - MEM/WB.RegisterRd = ID/EX.RegisterRs
+> -  MEM/WB.RegisterRd = ID/EX.RegisterRt
+
+----
+
+> **EX hazard**
+> 
+> - if (EX/MEM.RegWrite and (EX/MEM.RegisterRd ≠ 0)
+  and (EX/MEM.RegisterRd = ID/EX.RegisterRs))
+  ForwardA = 10
+> - if (EX/MEM.RegWrite and (EX/MEM.RegisterRd ≠ 0)
+  and (EX/MEM.RegisterRd = ID/EX.RegisterRt))
+  ForwardB = 10
+
+-----
+> **MEM hazard**
+> 
+> - if (MEM/WB.RegWrite and (MEM/WB.RegisterRd ≠ 0)
+    and not (EX/MEM.RegWrite and (EX/MEM.RegisterRd ≠ 0)
+  and (EX/MEM.RegisterRd = ID/EX.RegisterRs))
+ and (MEM/WB.RegisterRd = ID/EX.RegisterRs))
+  ForwardA = 01
+> - if (MEM/WB.RegWrite and (MEM/WB.RegisterRd ≠ 0)
+    and not (EX/MEM.RegWrite and (EX/MEM.RegisterRd ≠ 0)
+ and (EX/MEM.RegisterRd = ID/EX.RegisterRt))
+ and (MEM/WB.RegisterRd = ID/EX.RegisterRt))
+  ForwardB = 01
+
+---
+不存在冒险时，Rs，Rt:ForwardA，ForwardB = 00
+
+----
+这里的RegisterRd 对于R指令是ins[15:11]，对于I指令是ins[20:16]
+
+> **Load-use hazard**
+> 
+> - if ID/EX.MemRead and
+  ((ID/EX.RegisterRt = IF/ID.RegisterRs) or
+   (ID/EX.RegisterRt = IF/ID.RegisterRt))  则存在
+> - ID/EX的控制信号为0，阻止PC和IF/ID寄存器的更新
+
+----
+
+> **Branches hazard**
+> 
+> -  直接在ID处判断\$Rs，\$Rt的值是否相等，若相等，刷新IF/ID寄存器，PC转到PC_br即可；不相等，不刷新，PC=PC+4即可。
+
+
+问题2：中间寄存器的赋值
+-----
+修改im[11:2] ->  im[31:2]
+3000  =  0011 0000 0000 0000
+
+问题3：j指令
+----
+
+if取到的指令是j指令，则npc为跳转地址（通过jump控制）
+如果上一指令是branch，且要跳转，则 npc = branch 跳转地址
+如果not(上一指令是branch，且要跳转) && if_ins[31:26] == 6'b000010，则npc = j指令跳转地址
+
+1.asm
+<code>
+ #add $t2, $zero, 7
+ #add $t3, $zero, 15
+ #add $s4, $zero, 128
+goto:
+add  $t1, $t2, $t3  #t1 = 22
+add  $t4, $t2, $s4  #t4 = 135
+add  $s0, $t1, $t4  #s0 = 157
+sub  $s1, $s4, $zero #s1 = 128
+and  $s2, $s1, $t4  #s2 = 128
+sw   $t4, 100($zero)
+lw   $t9, 100($zero) #t9 = 135
+sub  $t5, $t3, $t2  #t5 = 8
+beq  $s1, $s2, label
+and  $t6, $t3, $t2  #t6 = 8
+label:
+or   $t7, $t3, $t2  #t7 = 15
+slt  $t8, $t2, $t3  #t8 = 1
+j    goto
+</code>
+
+code.txt
+<code>
+014b4820
+01546020
+012c8020
+02808822
+022c9024
+ac0c0064
+8c190064
+016a6822
+12320001
+016a7024
+016a7825
+014bc02a
+08000c00
+</code>
+
+最后一个点
+-------
+>lw $1,addr  
+beq \$1,\$4,target
+
+对于这种情况，从RegisterFile出来的值busA不是真实的值（lw还没有写回），必须进行选择
+> if (mem_RegWr !=0 && mem_MemtoReg!=0 && mem_Rw == id_Ra) 则 id_busA_mux2 = mem_dout
+> 否则 id_busA_mux2 = id_busA
+> 对busB进行同样的判断
+> if (mem_RegWr !=0 && mem_MemtoReg!=0 && mem_Rw == id_Rb) 则 id_busB_mux2 = mem_dout
+> 否则 id_busB_mux2 = id_busB
+> 这样就只需要插入一个空操作就可以了
+
+----
+//hazard要阻塞赋值！
+
+问题4
+----
+
+ex下传到mem的busB和传入alu的busB在R和I指令下是不一样的！！！
+传入alu的busB:
+ex_alu_busB = ( ex_op == 6'd0) ? ((forwardB == 2'b00) ? ex_busB : (forwardB == 2'b01) ? wr_busW : mem_alu_result) : ex_imm16Ext;
+下传到mem的busB : 
+MUX3_ex_busB_pushDown(ex_busB,wr_busW,mem_alu_result,forwardB,ex_busB_pushDown);
+
+<code>
+add  $s2, $s1, $t4  #s2 = 263
+sw   $s1, 100($zero)
+lw   $s2, 100($zero) #s2 = 128
+</code>
+
+问题5: if_flush和hazard（lw）刷新if_id
+----
+hazard刷新下的id_ins不用变，if_flush刷新下的id_ins初始化，防止死循环（if_flush一直等于1，读不进新的指令）
+
+<code>
+code_1.txt
+goto:
+add  $t1, $t2, $t3  #t1 = 22
+add  $t4, $t2, $s4  #t4 = 135
+add  $s0, $t1, $t4  #s0 = 157
+sub  $s1, $s4, $zero #s1 = 128
+add  $s2, $s1, $t4  #s2 = 263
+sw   $s1, 100($zero)
+lw   $s2, 100($zero) #s2 = 128
+beq  $s1, $s2, label
+sub  $t5, $t3, $t2  #t5 = 8
+and  $t6, $t3, $t2  #t6 = 8
+label:
+or   $t7, $t3, $t2  #t7 = 15
+slt  $t8, $t2, $t3  #t8 = 1
+j    goto
+</code>
+
+
+##36条指令的流水
+分成5类：
+> - 第一类：类addu rd,rs,rt
+> - 第二类：分支跳转，类BEQ rs,rt,offset
+> - 第三类：装载存储，与存储器有关的指令，类LW rt,offset(base)
+> - 第四类：跳转指令，类J target
+> - 第五类：跳转并链接，类 JALR rs
+
+###第一类，类addu rd,rs,rt
+原来的Forwarding Unit（转发）即可解决冒险
+###第二类，分支跳转，类BEQ rs,rt,offset
+
+####插空气泡
+类BEQ即可解决冒险，在ID阶段从寄存器里取出busA和busB（也有可能还没有写回寄存器，如下）
+
+  
+
+    add $1, $2, $3
+    add $4, $5, $6
+    beq stalled
+    beq $1, $4, target
+
+上述指令需要在add $4在MEM阶段转发给ID
+**（EX.RegWr==1） &&（EX.Rw == ID.Ra || EX.Rw == ID.Rb）**时出现冒险（RegWr是写回寄存器），这时候beq向上插一个空气泡，即**向ID/EX中间寄存器插入一个空气泡（即控制信号清零），并保持PC和IF/ID中间寄存器的值不变**。
+再考虑
+
+    lw $1, addr
+    beq stalled
+    beq stalled
+    beq $1, $0, target
+
+上述指令需要lw插两个空气泡，在WB阶段转发给beq。因为lw会向下插一个气泡，beq向上插一个气泡（这两个气泡其实是同一个，因为beq在ID，lw在EX）,所以还需要考虑第二个气泡，**MEM.MemtoReg=1 &&（MEM.Rw == ID.Ra || MEM.Rw == ID.Rb）** 插入空气泡。
+
+
+综上，当  **  (（（EX.RegWr==1） &&（EX.Rw == ID.Ra || EX.Rw == ID.Rb）) || （MEM.MemtoReg=1 &&（MEM.Rw == ID.Ra || MEM.Rw == ID.Rb））)  **   需要插空气泡
+
+####转发
+冒险可能是MEM冒险，需要像forwardingUnit一样判断。转发是转发到busA,busB：
+
+-----
+> **MEM hazard**
+> 
+> - if ((MEM.RegWr==1) and (MEM.Rd ≠ 0) and (MEM.Rd = id.Rs))
+  **ForwardA = 1, busA = mem_alu_result**
+> - if ((MEM.RegWr==1) and (MEM.Rd ≠ 0) and (MEM.Rd = id.Rt))
+   **ForwardB = 1, busB = mem_alu_result**
+
+####当跳转时flush
+若branch要跳转，则刷新IF/ID（将信号指令都置为0）和更新PC（PC_branch）
+
+###第三类，装载存储，与存储器有关的指令，类LW rt,offset(base)
+lw-use的冒险可由HazardDetectionUnit解决。
+lw在ex阶段时，可能出现冒险（**ex.MemtoReg==1 && (ex.Rw == id.Rb || ex.Rw == id.Ra)**），此时让ID/EX中间寄存器的控制信号为0，而IF/ID中间寄存器和PC保持不变。（插入一个空气泡，如下面的例子）
+
+	lw $2, 20($1)
+	add becomes nop
+	add $4, $2, $5
+	or $8, $2, $6
+	 
+上述指令中，lw在WB阶段把\$2数据写回，同时or在ID阶段把\$2数据取出，所以**寄存器堆需要前半周期写回，后半周期取数据！！！**
+
+###第四类：跳转指令，类J target
+在ID处跳转，通过jump信号刷新IF/ID中间寄存器和更新PC
+
+###第五类：跳转并链接，类 JALR rs
+专门为31号寄存器开一个读入口！！跳转指令类似第四类~
+
+down
