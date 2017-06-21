@@ -1,0 +1,275 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+de:/modeltech64_10.4/examples
+vADDER
+!s110 1493414241
+!i10b 1
+!s100 Om4:e=99TH0NTK891J5Sm1
+ISBY:Omn^CYUkBG@e=QH7_1
+Z0 VDg1SIo80bB@j0V0VzS_@n1
+Z1 dE:/modeltech64_10.4/examples/project_1_model
+w1493414231
+8E:\modeltech64_10.4\examples\project_1_model\ADDER.v
+FE:\modeltech64_10.4\examples\project_1_model\ADDER.v
+L0 2
+Z2 OL;L;10.4;61
+r1
+!s85 0
+31
+!s108 1493414241.721000
+!s107 E:\modeltech64_10.4\examples\project_1_model\ADDER.v|
+!s90 -reportprogress|300|-work|work|-novopt|-stats=none|E:\modeltech64_10.4\examples\project_1_model\ADDER.v|
+!i113 1
+Z3 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+n@a@d@d@e@r
+vALU
+!s110 1493407785
+!i10b 1
+!s100 aIC71`;2U;OQ>HTcF^E]M0
+I_7>1XT5iPLZFcBFUVGOVA0
+R0
+R1
+w1493407782
+8E:\modeltech64_10.4\examples\project_1_model\ALU.v
+FE:\modeltech64_10.4\examples\project_1_model\ALU.v
+L0 6
+R2
+r1
+!s85 0
+31
+!s108 1493407785.617000
+!s107 E:\modeltech64_10.4\examples\project_1_model\ALU.v|
+!s90 -reportprogress|300|-work|work|-novopt|-stats=none|E:\modeltech64_10.4\examples\project_1_model\ALU.v|
+!i113 1
+R3
+n@a@l@u
+vALUctrl
+!s110 1493414214
+!i10b 1
+!s100 5=aC@>dIc9LhlGR<YPzim0
+IBYdGV^dN1E44=akGOTl^n2
+R0
+R1
+w1493414201
+8E:\modeltech64_10.4\examples\project_1_model\ALUctrl.v
+FE:\modeltech64_10.4\examples\project_1_model\ALUctrl.v
+L0 2
+R2
+r1
+!s85 0
+31
+!s108 1493414214.695000
+!s107 E:\modeltech64_10.4\examples\project_1_model\ALUctrl.v|
+!s90 -reportprogress|300|-work|work|-novopt|-stats=none|E:\modeltech64_10.4\examples\project_1_model\ALUctrl.v|
+!i113 1
+R3
+n@a@l@uctrl
+vctrl
+!s110 1493414185
+!i10b 1
+!s100 >olAlE;4FbSfma[Mz1SCZ3
+I;n4[1bNB8HAB;nz4`89l40
+R0
+R1
+w1493414177
+8E:\modeltech64_10.4\examples\project_1_model\ctrl.v
+FE:\modeltech64_10.4\examples\project_1_model\ctrl.v
+L0 3
+R2
+r1
+!s85 0
+31
+!s108 1493414185.662000
+!s107 E:\modeltech64_10.4\examples\project_1_model\ctrl.v|
+!s90 -reportprogress|300|-work|work|-novopt|-stats=none|E:\modeltech64_10.4\examples\project_1_model\ctrl.v|
+!i113 1
+R3
+vdm_4k
+!s110 1493434806
+!i10b 1
+!s100 HPJEj`iH24lGY1ab3B4NP1
+IM51@R^OLAY]PJz3R2hj;@1
+R0
+R1
+w1493434800
+8E:/modeltech64_10.4/examples/project_1_model/dm.v
+FE:/modeltech64_10.4/examples/project_1_model/dm.v
+L0 2
+R2
+r1
+!s85 0
+31
+!s108 1493434806.966000
+!s107 E:/modeltech64_10.4/examples/project_1_model/dm.v|
+!s90 -reportprogress|300|-work|work|-novopt|-stats=none|E:/modeltech64_10.4/examples/project_1_model/dm.v|
+!i113 1
+R3
+vExt
+!s110 1493405790
+!i10b 1
+!s100 QeSAzm]<RhPOg[Hdf3o?i1
+I1OUI6VzDghG5;L[KoSfC>2
+R0
+R1
+w1493405785
+8E:\modeltech64_10.4\examples\project_1_model\Ext.v
+FE:\modeltech64_10.4\examples\project_1_model\Ext.v
+L0 4
+R2
+r1
+!s85 0
+31
+!s108 1493405790.856000
+!s107 E:\modeltech64_10.4\examples\project_1_model\Ext.v|
+!s90 -reportprogress|300|-work|work|-novopt|-stats=none|E:\modeltech64_10.4\examples\project_1_model\Ext.v|
+!i113 1
+R3
+n@ext
+vim_4k
+!s110 1493396468
+!i10b 1
+!s100 A936P;]_<UBVC>2]CaURh2
+I]Mm5Aafn1CFSSWn`WJ[8=1
+R0
+R1
+w1493166347
+8E:/modeltech64_10.4/examples/project_1_model/im.v
+FE:/modeltech64_10.4/examples/project_1_model/im.v
+L0 2
+R2
+r1
+!s85 0
+31
+!s108 1493396468.651000
+!s107 E:/modeltech64_10.4/examples/project_1_model/im.v|
+!s90 -reportprogress|300|-work|work|-novopt|-stats=none|E:/modeltech64_10.4/examples/project_1_model/im.v|
+!i113 1
+R3
+vmips
+!s110 1493405531
+!i10b 1
+!s100 2YK>3LQ=5Bo`35I`K_^2V0
+If=BMY[z4>1MlfSM7T9E190
+R0
+R1
+w1493405486
+8E:\modeltech64_10.4\examples\project_1_model\mips.v
+FE:\modeltech64_10.4\examples\project_1_model\mips.v
+L0 1
+R2
+r1
+!s85 0
+31
+!s108 1493405531.378000
+!s107 E:\modeltech64_10.4\examples\project_1_model\mips.v|
+!s90 -reportprogress|300|-work|work|-novopt|-stats=none|E:\modeltech64_10.4\examples\project_1_model\mips.v|
+!i113 1
+R3
+vMUX2
+!s110 1493390960
+!i10b 1
+!s100 3Dl`lR2Hkc`aBzfhI<R[[0
+I_ljOah176hkoo;ViH8oGm0
+R0
+R1
+w1493164590
+8E:/modeltech64_10.4/examples/project_1_model/MUX.v
+FE:/modeltech64_10.4/examples/project_1_model/MUX.v
+L0 1
+R2
+r1
+!s85 0
+31
+!s108 1493390960.140000
+!s107 E:/modeltech64_10.4/examples/project_1_model/MUX.v|
+!s90 -reportprogress|300|-work|work|-novopt|-stats=none|E:/modeltech64_10.4/examples/project_1_model/MUX.v|
+!i113 1
+R3
+n@m@u@x2
+vnpc
+!s110 1493396523
+!i10b 1
+!s100 cafcO8SDl5@0mmc7i[6mR2
+I@Mhl`NA?9g@TC5oLFUKPE2
+R0
+R1
+w1493396513
+8E:/modeltech64_10.4/examples/project_1_model/npc.v
+FE:/modeltech64_10.4/examples/project_1_model/npc.v
+L0 2
+R2
+r1
+!s85 0
+31
+!s108 1493396523.663000
+!s107 E:/modeltech64_10.4/examples/project_1_model/npc.v|
+!s90 -reportprogress|300|-work|work|-novopt|-stats=none|E:/modeltech64_10.4/examples/project_1_model/npc.v|
+!i113 1
+R3
+vpc
+!s110 1493414217
+!i10b 1
+!s100 hiA]k@RlhSJ^CiPXXcDR70
+I000h>0WHz_eEaRoEh]SGf0
+R0
+R1
+w1493414211
+8E:\modeltech64_10.4\examples\project_1_model\pc.v
+FE:\modeltech64_10.4\examples\project_1_model\pc.v
+L0 1
+R2
+r1
+!s85 0
+31
+!s108 1493414217.079000
+!s107 E:\modeltech64_10.4\examples\project_1_model\pc.v|
+!s90 -reportprogress|300|-work|work|-novopt|-stats=none|E:\modeltech64_10.4\examples\project_1_model\pc.v|
+!i113 1
+R3
+vrf
+!s110 1493435063
+!i10b 1
+!s100 M48Hz:2WOU<o5Wd]jXXW32
+IF[Y[^M3NV5zYBKhcW>=gA3
+R0
+R1
+w1493435059
+8E:/modeltech64_10.4/examples/project_1_model/rf.v
+FE:/modeltech64_10.4/examples/project_1_model/rf.v
+L0 2
+R2
+r1
+!s85 0
+31
+!s108 1493435063.508000
+!s107 E:/modeltech64_10.4/examples/project_1_model/rf.v|
+!s90 -reportprogress|300|-work|work|-novopt|-stats=none|E:/modeltech64_10.4/examples/project_1_model/rf.v|
+!i113 1
+R3
+vtestbench
+!s110 1493406942
+!i10b 1
+!s100 52`LoZ_dS<@OHZdDOZMK;1
+I<8LQW>Z8X@Gj0bJ1XCg;L1
+R0
+R1
+w1493406938
+8E:/modeltech64_10.4/examples/project_1_model/testbench.v
+FE:/modeltech64_10.4/examples/project_1_model/testbench.v
+L0 1
+R2
+r1
+!s85 0
+31
+!s108 1493406942.706000
+!s107 E:/modeltech64_10.4/examples/project_1_model/testbench.v|
+!s90 -reportprogress|300|-work|work|-novopt|-stats=none|E:/modeltech64_10.4/examples/project_1_model/testbench.v|
+!i113 1
+R3

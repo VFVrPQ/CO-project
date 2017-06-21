@@ -1,0 +1,124 @@
+E:/modeltech64_10.4/examples/project2/midreg/id_ex.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project2/midreg/id_ex.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module id_ex
+
+Top level modules:
+	id_ex
+
+} {} {}} E:/modeltech64_10.4/examples/project2/datapath/MUX.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project2/datapath/MUX.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module MUX2
+-- Compiling module MUX3
+
+Top level modules:
+	MUX2
+	MUX3
+
+} {} {}} E:/modeltech64_10.4/examples/project2/datapath/ALU.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project2/datapath/ALU.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} E:/modeltech64_10.4/examples/project2/datapath/pc.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project2/datapath/pc.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module pc
+
+Top level modules:
+	pc
+
+} {} {}} E:/modeltech64_10.4/examples/project2/midreg/if_id.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project2/midreg/if_id.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module if_id
+
+Top level modules:
+	if_id
+
+} {} {}} E:/modeltech64_10.4/examples/project2/control/forwardingUnit.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project2/control/forwardingUnit.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module forwardingUnit
+
+Top level modules:
+	forwardingUnit
+
+} {} {}} E:/modeltech64_10.4/examples/project2/control/ctrl.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project2/control/ctrl.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module ctrl
+
+Top level modules:
+	ctrl
+
+} {} {}} E:/modeltech64_10.4/examples/project2/datapath/branchOrNot.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project2/datapath/branchOrNot.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module branchOrNot
+
+Top level modules:
+	branchOrNot
+
+} {} {}} E:/modeltech64_10.4/examples/project2/datapath/rf.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project2/datapath/rf.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module rf
+
+Top level modules:
+	rf
+
+} {} {}} E:/modeltech64_10.4/examples/project2/midreg/mem_wr.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project2/midreg/mem_wr.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module mem_wr
+
+Top level modules:
+	mem_wr
+
+} {} {}} E:/modeltech64_10.4/examples/project2/datapath/SignExt.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project2/datapath/SignExt.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module SignExt1
+-- Compiling module SignExt16
+
+Top level modules:
+	SignExt1
+	SignExt16
+
+} {} {}} E:/modeltech64_10.4/examples/project2/testbench.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project2/testbench.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module testbench
+
+Top level modules:
+	testbench
+
+} {} {}} E:/modeltech64_10.4/examples/project2/control/HazardDetectionUnit.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project2/control/HazardDetectionUnit.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module HazardDetectionUnit
+
+Top level modules:
+	HazardDetectionUnit
+
+} {} {}} E:/modeltech64_10.4/examples/project2/midreg/ex_mem.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project2/midreg/ex_mem.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module ex_mem
+
+Top level modules:
+	ex_mem
+
+} {} {}} E:/modeltech64_10.4/examples/project2/datapath/im.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project2/datapath/im.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module im_4k
+
+Top level modules:
+	im_4k
+
+} {} {}} E:/modeltech64_10.4/examples/project2/datapath/npc.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project2/datapath/npc.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module npc
+
+Top level modules:
+	npc
+
+} {} {}} E:/modeltech64_10.4/examples/project2/datapath/dm.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project2/datapath/dm.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module dm_4k
+
+Top level modules:
+	dm_4k
+
+} {} {}}

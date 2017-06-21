@@ -1,0 +1,92 @@
+E:/modeltech64_10.4/examples/project_1_model/ctrl.v {1 {vlog -work work -novopt -stats=none {E:\modeltech64_10.4\examples\project_1_model\ctrl.v}
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module ctrl
+
+Top level modules:
+	ctrl
+
+} {} {}} E:/modeltech64_10.4/examples/project_1_model/im.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project_1_model/im.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module im_4k
+
+Top level modules:
+	im_4k
+
+} {} {}} E:/modeltech64_10.4/examples/project_1_model/ALUctrl.v {1 {vlog -work work -novopt -stats=none {E:\modeltech64_10.4\examples\project_1_model\ALUctrl.v}
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module ALUctrl
+
+Top level modules:
+	ALUctrl
+
+} {} {}} E:/modeltech64_10.4/examples/project_1_model/dm.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project_1_model/dm.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module dm_4k
+
+Top level modules:
+	dm_4k
+
+} {} {}} E:/modeltech64_10.4/examples/project_1_model/Ext.v {1 {vlog -work work -novopt -stats=none {E:\modeltech64_10.4\examples\project_1_model\Ext.v}
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module Ext
+
+Top level modules:
+	Ext
+
+} {} {}} E:/modeltech64_10.4/examples/project_1_model/mips.v {1 {vlog -work work -novopt -stats=none {E:\modeltech64_10.4\examples\project_1_model\mips.v}
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module mips
+
+Top level modules:
+	mips
+
+} {} {}} E:/modeltech64_10.4/examples/project_1_model/npc.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project_1_model/npc.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module npc
+
+Top level modules:
+	npc
+
+} {} {}} E:/modeltech64_10.4/examples/project_1_model/ALU.v {1 {vlog -work work -novopt -stats=none {E:\modeltech64_10.4\examples\project_1_model\ALU.v}
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} E:/modeltech64_10.4/examples/project_1_model/MUX.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project_1_model/MUX.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module MUX2
+
+Top level modules:
+	MUX2
+
+} {} {}} E:/modeltech64_10.4/examples/project_1_model/pc.v {1 {vlog -work work -novopt -stats=none {E:\modeltech64_10.4\examples\project_1_model\pc.v}
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module pc
+
+Top level modules:
+	pc
+
+} {} {}} E:/modeltech64_10.4/examples/project_1_model/rf.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project_1_model/rf.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module rf
+
+Top level modules:
+	rf
+
+} {} {}} E:/modeltech64_10.4/examples/project_1_model/ADDER.v {1 {vlog -work work -novopt -stats=none {E:\modeltech64_10.4\examples\project_1_model\ADDER.v}
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module ADDER
+
+Top level modules:
+	ADDER
+
+} {} {}} E:/modeltech64_10.4/examples/project_1_model/testbench.v {1 {vlog -work work -novopt -stats=none E:/modeltech64_10.4/examples/project_1_model/testbench.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module testbench
+
+Top level modules:
+	testbench
+
+} {} {}}
