@@ -1,0 +1,239 @@
+# Reading C:/modeltech64_10.4/tcl/vsim/pref.tcl
+# //  ModelSim SE-64 10.4 Dec  3 2014 
+# //
+# //  Copyright 1991-2014 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+# OpenFile D:/code/project2/project2.mpf
+# Loading project project2
+vsim -gui work.testbench
+# vsim -gui D:\code\project2\project2.mpf 
+# Start time: 22:02:03 on Jun 22,2017
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# 
+# ** Error: D:/code/project2/mips.v(178): (vopt-2912) Port 'mem_MemRead' not found in module 'dm_4k' (6th connection).
+# 
+# Optimization failed
+# Error loading design
+vsim -gui -novopt work.testbench
+# vsim 
+# Start time: 22:02:18 on Jun 22,2017
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing D:/code/project2/work.testbench
+# Loading work.testbench
+# Refreshing D:/code/project2/work.mips
+# Loading work.mips
+# Refreshing D:/code/project2/work.pc
+# Loading work.pc
+# Refreshing D:/code/project2/work.npc
+# Loading work.npc
+# Refreshing D:/code/project2/work.im_4k
+# Loading work.im_4k
+# Refreshing D:/code/project2/work.if_id
+# Loading work.if_id
+# Refreshing D:/code/project2/work.ctrl
+# Loading work.ctrl
+# Refreshing D:/code/project2/work.rf
+# Loading work.rf
+# Refreshing D:/code/project2/work.SignExt16
+# Loading work.SignExt16
+# Refreshing D:/code/project2/work.HazardDetectionUnit
+# Loading work.HazardDetectionUnit
+# Refreshing D:/code/project2/work.BranchForwardingUnit
+# Loading work.BranchForwardingUnit
+# Refreshing D:/code/project2/work.MUX2
+# Loading work.MUX2
+# Refreshing D:/code/project2/work.branchOrNot
+# Loading work.branchOrNot
+# Refreshing D:/code/project2/work.BranchBubbleUnit
+# Loading work.BranchBubbleUnit
+# Refreshing D:/code/project2/work.id_ex
+# Loading work.id_ex
+# Refreshing D:/code/project2/work.forwardingUnit
+# Loading work.forwardingUnit
+# Refreshing D:/code/project2/work.MUX3
+# Loading work.MUX3
+# Refreshing D:/code/project2/work.SignExt5
+# Loading work.SignExt5
+# Refreshing D:/code/project2/work.ALU
+# Loading work.ALU
+# Refreshing D:/code/project2/work.ex_mem
+# Loading work.ex_mem
+# Refreshing D:/code/project2/work.dm_4k
+# Loading work.dm_4k
+# Refreshing D:/code/project2/work.mem_wr
+# Loading work.mem_wr
+# ** Error: (vsim-3063) D:/code/project2/mips.v(178): Port 'mem_MemRead' not found in the connected module (6th connection).
+#    Time: 0 ns  Iteration: 0  Instance: /testbench/mips/a_dm_4k File: D:/code/project2/datapath/dm.v
+# Error loading design
+# Compile of testbench.v was successful.
+# Compile of mips.v was successful.
+# Compile of BranchBubbleUnit.v was successful.
+# Compile of BranchForwardingUnit.v was successful.
+# Compile of ctrl.v was successful.
+# Compile of forwardingUnit.v was successful.
+# Compile of HazardDetectionUnit.v was successful.
+# Compile of ALU.v was successful.
+# Compile of branchOrNot.v was successful.
+# Compile of dm.v was successful.
+# Compile of im.v was successful.
+# Compile of MUX.v was successful.
+# Compile of npc.v was successful.
+# Compile of pc.v was successful.
+# Compile of rf.v was successful.
+# Compile of SignExt.v was successful.
+# Compile of ex_mem.v was successful.
+# Compile of id_ex.v was successful.
+# Compile of if_id.v was successful.
+# Compile of mem_wr.v was successful.
+# 20 compiles, 0 failed with no errors.
+vsim -gui -novopt work.testbench
+# vsim 
+# Start time: 22:03:13 on Jun 22,2017
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing D:/code/project2/work.testbench
+# Loading work.testbench
+# Refreshing D:/code/project2/work.mips
+# Loading work.mips
+# Refreshing D:/code/project2/work.pc
+# Loading work.pc
+# Refreshing D:/code/project2/work.npc
+# Loading work.npc
+# Refreshing D:/code/project2/work.im_4k
+# Loading work.im_4k
+# Refreshing D:/code/project2/work.if_id
+# Loading work.if_id
+# Refreshing D:/code/project2/work.ctrl
+# Loading work.ctrl
+# Refreshing D:/code/project2/work.rf
+# Loading work.rf
+# Refreshing D:/code/project2/work.SignExt16
+# Loading work.SignExt16
+# Refreshing D:/code/project2/work.HazardDetectionUnit
+# Loading work.HazardDetectionUnit
+# Refreshing D:/code/project2/work.BranchForwardingUnit
+# Loading work.BranchForwardingUnit
+# Refreshing D:/code/project2/work.MUX2
+# Loading work.MUX2
+# Refreshing D:/code/project2/work.branchOrNot
+# Loading work.branchOrNot
+# Refreshing D:/code/project2/work.BranchBubbleUnit
+# Loading work.BranchBubbleUnit
+# Refreshing D:/code/project2/work.id_ex
+# Loading work.id_ex
+# Refreshing D:/code/project2/work.forwardingUnit
+# Loading work.forwardingUnit
+# Refreshing D:/code/project2/work.MUX3
+# Loading work.MUX3
+# Refreshing D:/code/project2/work.SignExt5
+# Loading work.SignExt5
+# Refreshing D:/code/project2/work.ALU
+# Loading work.ALU
+# Refreshing D:/code/project2/work.ex_mem
+# Loading work.ex_mem
+# Refreshing D:/code/project2/work.dm_4k
+# Loading work.dm_4k
+# Refreshing D:/code/project2/work.mem_wr
+# Loading work.mem_wr
+# ** Error: (vsim-3063) D:/code/project2/mips.v(178): Port 'MemRead' not found in the connected module (6th connection).
+#    Time: 0 ns  Iteration: 0  Instance: /testbench/mips/a_dm_4k File: D:/code/project2/datapath/dm.v
+# Error loading design
+# Compile of mips.v was successful.
+vsim -gui -novopt work.testbench
+# vsim 
+# Start time: 22:03:53 on Jun 22,2017
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Loading work.testbench
+# Refreshing D:/code/project2/work.mips
+# Loading work.mips
+# Loading work.pc
+# Loading work.npc
+# Loading work.im_4k
+# Loading work.if_id
+# Loading work.ctrl
+# Loading work.rf
+# Loading work.SignExt16
+# Loading work.HazardDetectionUnit
+# Loading work.BranchForwardingUnit
+# Loading work.MUX2
+# Loading work.branchOrNot
+# Loading work.BranchBubbleUnit
+# Loading work.id_ex
+# Loading work.forwardingUnit
+# Loading work.MUX3
+# Loading work.SignExt5
+# Loading work.ALU
+# Loading work.ex_mem
+# Loading work.dm_4k
+# Loading work.mem_wr
+add wave -r sim:/testbench/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: Administrator  Hostname: WQ-20161219HOWD  ProcessID: 8376
+# 
+#           Attempting to use alternate WLF file "./wlftr18202".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlftr18202
+# 
+run
+run
+run
+run
+quit -sim
+# Compile of id_ex.v was successful.
+vsim -gui -novopt work.testbench
+# vsim 
+# Start time: 22:06:02 on Jun 22,2017
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Loading work.testbench
+# Loading work.mips
+# Loading work.pc
+# Loading work.npc
+# Loading work.im_4k
+# Loading work.if_id
+# Loading work.ctrl
+# Loading work.rf
+# Loading work.SignExt16
+# Loading work.HazardDetectionUnit
+# Loading work.BranchForwardingUnit
+# Loading work.MUX2
+# Loading work.branchOrNot
+# Loading work.BranchBubbleUnit
+# Refreshing D:/code/project2/work.id_ex
+# Loading work.id_ex
+# Loading work.forwardingUnit
+# Loading work.MUX3
+# Loading work.SignExt5
+# Loading work.ALU
+# Loading work.ex_mem
+# Loading work.dm_4k
+# Loading work.mem_wr
+add wave -r sim:/testbench/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: Administrator  Hostname: WQ-20161219HOWD  ProcessID: 8376
+# 
+#           Attempting to use alternate WLF file "./wlft73tmkr".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlft73tmkr
+# 
+run
+run
+run
+run
+quit -sim
