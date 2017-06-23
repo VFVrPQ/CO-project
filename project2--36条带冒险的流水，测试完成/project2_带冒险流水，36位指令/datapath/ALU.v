@@ -1,0 +1,68 @@
+/*
+addu  0000 有符号无符号无区别，在没有溢出的情况下
+subu  0001
+slt 0010
+and 0011
+nor 0100
+or  0101
+xor 0110
+sll 0111
+srl 1000
+sltu  1001
+sra 1010
+*/
+module ALU #(parameter WIDTH = 32)
+  (A,B,ALUctr,Zero,Result);//no Overflow
+  //define
+  input [WIDTH-1:0]     A,B;
+  input [3:0]           ALUctr;
+  output            Zero;
+  output reg [WIDTH-1:0]  Result;
+  
+  //***SLTUpre***//
+  wire [WIDTH-1:0]        high   = {1'b1, {WIDTH-1{1'b0}} };
+  wire [WIDTH-1:0]        SLTUA  = A ^ high;
+  wire [WIDTH-1:0]        SLTUB  = B ^ high;
+  
+  assign Zero = ((Result == 0)? 1 : 0);
+
+  always @ (ALUctr or A or B)
+  begin
+  case (ALUctr)
+    //***ADDU**//
+    4'b0000 : assign Result = A + B;//直接得出结果
+    //***SUBU**//
+    4'b0001 : assign Result = A - B;
+    //***SLT***//
+    4'b0010 : assign Result = (A < B) ? 1 : 0;
+    //***AND***//
+    4'b0011 : assign Result = A & B;
+    //***NOR***//
+    4'b0100 : assign Result = ~ ( A | B);
+    //***OR****//
+    4'b0101 : assign Result = A | B;
+    //***XOR***//
+    4'b0110 : assign Result = A ^ B;
+    //***SLL***//
+    4'b0111 : assign Result = B << A;//A,B反向
+    //***SRL**//
+    4'b1000 : assign Result = B >> A;//A,B反向
+    //***SLTU***//
+    4'b1001 : begin
+                assign Result = (SLTUA < SLTUB) ? 1 : 0; 
+    end
+    //***SRA***//A,B反向
+    4'b1010 : begin
+          if (B[31] == 0)begin
+            assign Result = B >> A;
+          end else begin
+            assign Result = ~((~B)>>A);
+          end
+    end
+    //***LUI***//
+    4'b1011 : begin
+          assign Result = {B[15:0], 16'd0};
+    end
+  endcase
+  end
+endmodule
