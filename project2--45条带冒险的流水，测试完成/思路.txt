@@ -1,0 +1,285 @@
+##36条指令的流水
+---
+
+分成5类：
+> - 第一类：类addu rd,rs,rt
+> - 第二类：分支跳转，类BEQ rs,rt,offset
+> - 第三类：装载存储，与存储器有关的指令，类LW rt,offset(base)
+> - 第四类：跳转指令，J target，JR rs， JALR rs，JAL target
+
+
+### 第一类，类addu rd,rs,rt
+
+#### 1、冒险解决
+
+原来的Forwarding Unit（转发）即可解决冒险。
+
+---
+
+
+#### 2、控制信号
+
+
+所有的第一大类指令均在ALU内解决。
+
+R指令控制信号一起写（排除掉JR，JALR）！！方便一点。
+
+##### a).
+
+> 立即数装载高位	LUI rt,imm	001111	00000	rt	imm			addu	GPR[rt] <= {imm, 16'd0}
+
+直接取出ALU_BusB的低16位。
+
+##### b).
+> - 算术右移	SRA rd,rt,shf	000000	00000	rt	rd	shf	000011
+> - 逻辑左移	SLL rd,rt,shf	000000	00000	rt	rd	shf	000000	sll
+> - 逻辑右移	SRL rd,rt,shf	000000	00000	rt	rd	shf	000010	srl
+
+新增控制信号ALUshf和数据shf，在ALUSrc后再次选择。注意是Rd => Rt!!!
+所以busA 和busB都要重新选择过！
+
+> ALUshf = (op == 000000  && (func == 000000 || func == 000010 || func == 000011))
+
+移位指令的R[busB]>>R[busA}和SUBU相反！！
+六条移位指令，分别对应ALUctr：sll，sra，srl
+
+---
+
+
+### 第二类，分支跳转，类BEQ rs,rt,offset
+
+
+#### 1、冒险解决
+
+
+##### a)插空气泡
+类BEQ即可解决冒险，在ID阶段从寄存器里取出busA和busB（也有可能还没有写回寄存器，如下）
+
+  
+
+    add $1, $2, $3
+    add $4, $5, $6
+    beq stalled
+    beq $1, $4, target
+
+上述指令需要在add $4在MEM阶段转发给ID
+**（EX.RegWr==1） &&（EX.Rw == ID.Ra || EX.Rw == ID.Rb）**时出现冒险（RegWr是写回寄存器），这时候beq向上插一个空气泡，即**向ID/EX中间寄存器插入一个空气泡（即控制信号清零），并保持PC和IF/ID中间寄存器的值不变**。
+再考虑
+
+    lw $1, addr
+    beq stalled
+    beq stalled
+    beq $1, $0, target
+
+上述指令需要lw插两个空气泡，在WB阶段转发给beq。因为lw会向下插一个气泡，beq向上插一个气泡（这两个气泡其实是同一个，因为beq在ID，lw在EX）,所以还需要考虑第二个气泡，（**MEM.MemtoReg=1 &&（MEM.Rw == ID.Ra || MEM.Rw == ID.Rb）** ）插入空气泡。
+
+
+综上，当  **(（（EX.RegWr==1） &&（EX.Rw == ID.Ra || EX.Rw == ID.Rb）) || （MEM.MemtoReg=1 &&（MEM.Rw == ID.Ra || MEM.Rw == ID.Rb））)  **   需要插空气泡
+
+##### b)转发
+冒险可能是MEM冒险，需要像forwardingUnit一样判断。转发是转发到busA,busB：
+
+> **MEM hazard**
+> 
+> - if ((MEM.RegWr==1) and (MEM.Rd ≠ 0) and (MEM.Rd = id.Rs))
+  **ForwardA = 1, busA = mem_alu_result**
+> - if ((MEM.RegWr==1) and (MEM.Rd ≠ 0) and (MEM.Rd = id.Rt))
+   **ForwardB = 1, busB = mem_alu_result**
+
+若branch要跳转，则flush,刷新IF/ID（将信号指令都置为0）和更新PC（PC_branch）,**使用loongson的指令测试时发现跳转的后一条指令是要执行的！所以并不需要flush,只需要更新PC就行**
+
+---
+
+
+#### 2、控制信号
+
+> - 相等跳转	BEQ rs,rt,offset	000100	rs	rt	offset		
+> - 不等跳转	BNE rs,rt,offset	000101	rs	rt	offset		
+> - 大于或等于零跳转	BEGEZ rs,offset	000001	rs	00001	offset		
+> - 大于零跳转	BGTZ rs,offset	000111	rs	00000	offset		
+> - 小于或等于零跳转	BLEZ rs,offset	000110	rs	00000	offset		
+> - 小于零跳转	BLTZ rs,offset	000001	rs	00000	offset		
+
+跳转指令的Branch信号要扩展
+> branch = 000, 不跳转
+> branch = 001,  BEQ
+> branch = 010,  BNE
+> branch = 011,  BEGEZ
+> branch = 100,  BGTZ
+> branch = 101,  BLEZ
+> branch = 110,  BLTZ
+
+在分支判断（branchOrNot）模块中判断即可。
+**注意modelsim中的<是无符号位比较！！！！**
+
+---
+
+### 第三类，装载存储，与存储器有关的指令，类LW rt,offset(base)
+
+
+#### 1、冒险解决
+
+lw-use的冒险可由HazardDetectionUnit解决。
+lw在ex阶段时，可能出现冒险（**ex.MemtoReg==1 && (ex.Rw == id.Rb || ex.Rw == id.Ra)**），此时让ID/EX中间寄存器的控制信号为0，而IF/ID中间寄存器和PC保持不变。（插入一个空气泡，如下面的例子）
+
+	lw $2, 20($1)
+	add becomes nop
+	add $4, $2, $5
+	or $8, $2, $6
+	 
+上述指令中，lw在WB阶段把\$2数据写回，同时or在ID阶段把\$2数据取出，所以**寄存器堆需要前半周期写回，后半周期取数据！！！**
+
+---
+
+#### 2、控制信号
+
+
+> - 装载字	LW rt,offset(base)	100011	base	rt	offset		
+> - 装载字节，并作符号扩展	LB rt, offset(base)	100000	base	rt	offset		
+> - 装载字节，并作无符号扩展	LBU rt,offset(base)	100100	base	rt	offset		
+
+对于这三条指令，新增MemRead控制信号，在dm上使用
+
+> MemRead = 00 ，不读取 0 
+> MemRead = 01 ， LW
+> MemRead = 10 ， LB
+> MemRead = 11 ，LBU
+
+-
+
+> - 存储字	SW rt,offset(base)	101011	base	rt	offset		
+> - 存储字节	SB rt, offset(base)	101000	base	rt	offset		
+
+对于这两条指令，修改MemWr控制信号，在dm上使用
+> MemWr = 00 , 不写入
+> MemWr = 01 , SW
+> MemWr = 10 , SB 
+
+还是用dm的[1023:0],SB的时候就修改dm[i]的8位
+dm的addr[11:2]修改成[11:0]
+
+---
+
+### 第四类：跳转指令J target，JR rs， JALR rs，JAL target
+
+#### 1、冒险解决
+
+
+均在ID处跳转；
+其中JR和JALR的R[rs]可能出现冒险,可以像branch一样插一个空气泡！
+专门在寄存器堆开了一个R[31]的写信号，让JALR和JAL在第二阶段就能完成！
+
+通过jump信号刷新IF/ID中间寄存器和更新PC。**使用loongson的指令发现跳转的后一条指令是要执行的！所以并不需要flush,只需要更新PC就行**
+
+---
+
+#### 2、控制信号
+
+> -  J target | 000010	target | 			PC <= {B_PC[31:28], target<<2, 2'd0}
+> - JR rs | 000000	rs	00000000		00000	001000 | 		PC <=  GPR[rs]
+> -  JALR rs | 000000	rs	00000	11111	00000	001001		| GPR[31] <= B_PC + 4, PC <= GPR[rs]
+> - JAL target | 000011	target | 				GPR[31] <= B_PC + 4, PC <= {B_PC[31:28], target << 2}
+
+指令跳转，返回给PC后需要进行选择，
+> Jump = 00 && Branch_ok = 0 , B_PC **无跳转**
+> Jump = 10  , GPR[rs]                    **JR & JALR**
+> Jump = 01 , {B_PC[31:28], target<<2, 2'd0}  **J&&JAL**
+> Branch_ok = 1, GPR[base] + sign_ext(offset) **branch**
+
+##### PC的赋值
+第二阶段（ID）传PC地址回去的时候不要传imm16之类的，直接计算好传回去，因为插空气泡的操作可能会使当前的PC和跳转指令的PC相差不是4
+
+down
+
+---
+
+
+## 45条指令
+
+
+### 一、37-41条，乘法器
+
+
+#### 1、新增模块
+
+
+在第3阶段加入乘法单元（MULU），
+在第5阶段加入HI,LO寄存器（HI_LO），
+
+---
+
+#### 2、控制信号
+
+
+MFLO和MFHI的RegWr和RegDst为1，其余ctrl内的信号都为0
+
+---
+
+#### 3、冒险
+
+无冒险
+
+---
+
+### 二、42-45条， cp0寄存器
+
+
+#### 1、新增模块
+
+
+在第5阶段加入CP0寄存器（CP0）
+
+---
+
+#### 2、控制信号
+
+原ctrl信号中仅MFCO指令的RegWr为1，其余信号为0
+
+---
+####3、冒险
+
+##### a) PC存在冒险
+> - MTCO rt, 14.0
+> - ERET
+
+-
+
+> - MTCO rt, 14.0
+> - nop
+> - ERET
+
+PC <= CPR[14.0]，ERET在第二阶段执行，而CPR[14.0]还没赋值回，这时候需要转发
+
+> - cp0Forward
+> -- (id.cp0Op==3'b100 &&  ex.cp0Op==3'b010 && ex.cs==5'd14 && ex.sel==3'd0)
+        **cp0Forward = 2'b01,选择ex_busB_mux3** 
+> -- (id.cp0Op==3'b100 &&  mem.cp0Op==3'b010 && mem.cs==5'd14 && mem.sel==3'd0 && !(ex.cp0Op==3'b010 && ex.cs==5'd14 && ex.sel==3'd0) ) 
+	**cp0Forward = 2'b10，选择mem_busB**
+> --  (id.cp0Op==3'b011) 
+	**cp0Forward = 2'b11, 选择(EXC_ENTER_ADDR=0),虽然不是转发，但为了简单写在这边
+> --   else
+	> **cp0Forward = 2'b00,选择cp0OutToPC**
+
+3'b010即是MTCO	
+转发后，再次根据cp0的指令选择是ERET还是SYSCALL。
+
+##### B) MFCO-use存在冒险
+
+例如
+> - MFCO $1, cp0(14.0)
+> - addiu \$1,\$1, cp0(14.0)
+
+以及
+> - MFCO $1, cp0(14.0)
+> - nop
+> - addiu \$1, \$1, cp0(14.0)
+ 
+ cp0在第五阶段取出数据，use在第二阶段从寄存器堆里取出数据，所以MFCO和use之间需要2个空气泡（向id_ex插气泡，保持PC不变，if_id不变）
+ 判断条件
+ > - cp0Bubble = 1
+> -- (ex.cp0Op==3'b001 && ex.Rw(目的操作数) !=0  && (ex.Rw == id.Ra || ex.Rw == id.Rb))
+> -- (mem.cp0Op==3'b001 &&  mem.Rw(目的操作数) !=0  && (mem.Rw == id.Ra || mem.Rw == id.Rb)) 
+
+
+beq和j指令在测试代码中下一条指令是不需要清零的！！
+当SYSCALL和ERET发生时，需要将下一条指令清零！！
