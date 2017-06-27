@@ -1,0 +1,16 @@
+Release 13.2 Drc O.61xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+Tue Jun 27 23:02:18 2017
+
+drc -z pipeline_cpu_display.ncd pipeline_cpu_display.pcf
+
+WARNING:PhysDesignRules:372 - Gated clock. Clock net a_mips/a_ctrl/_n0142 is
+   sourced by a combinatorial pin. This is not good design practice. Use the CE
+   pin to control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   a_mips/a_BranchOrNot/Branch[2]_Branch[2]_OR_287_o is sourced by a
+   combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+DRC detected 0 errors and 2 warnings.  Please see the previously displayed
+individual error or warning messages for more details.

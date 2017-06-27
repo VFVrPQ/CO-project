@@ -1,0 +1,598 @@
+--------------------------------------------------------------------------------
+Release 13.2 Trace  (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\13.2\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 3
+-n 3 -fastpaths -xml pipeline_cpu_display.twx pipeline_cpu_display.ncd -o
+pipeline_cpu_display.twr pipeline_cpu_display.pcf -ucf pipeline_cpu.ucf
+
+Design file:              pipeline_cpu_display.ncd
+Physical constraint file: pipeline_cpu_display.pcf
+Device,package,speed:     xc6slx150,fgg484,C,-3 (PRODUCTION 1.19 2011-06-20)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_clk = PERIOD TIMEGRP "clk" 100 ns HIGH 50%;
+
+ 7280 paths analyzed, 971 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  13.587ns.
+--------------------------------------------------------------------------------
+
+Paths for end point lcd_module/touch_module/touch_array_7_4 (SLICE_X101Y153.A6), 13 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     86.413ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               lcd_module/touch_module/touch_y_4 (FF)
+  Destination:          lcd_module/touch_module/touch_array_7_4 (FF)
+  Requirement:          100.000ns
+  Data Path Delay:      13.533ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.019ns (0.233 - 0.252)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 100.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: lcd_module/touch_module/touch_y_4 to lcd_module/touch_module/touch_array_7_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X76Y154.BQ     Tcko                  0.447   lcd_module/touch_module/touch_y_4
+                                                       lcd_module/touch_module/touch_y_4
+    SLICE_X16Y160.A2     net (fanout=4)        3.762   lcd_module/touch_module/touch_y_4
+    SLICE_X16Y160.A      Tilo                  0.205   lcd_module/touch_module/touch_y_2
+                                                       lcd_module/touch_module/touch_y[4]_PWR_8_o_LessThan_109_o1
+    SLICE_X52Y124.A5     net (fanout=47)       4.541   lcd_module/touch_module/Madd_n0499_lut<3>
+    SLICE_X52Y124.A      Tilo                  0.203   lcd_module/touch_module/_n0605_inv
+                                                       lcd_module/touch_module/Mmux_touch_array[0][5]_PWR_8_o_mux_171_OUT1411
+    SLICE_X101Y153.A6    net (fanout=8)        4.053   lcd_module/touch_module/Mmux_touch_array[0][5]_PWR_8_o_mux_171_OUT141
+    SLICE_X101Y153.CLK   Tas                   0.322   lcd_module/touch_module/touch_array_7<7>
+                                                       lcd_module/touch_module/Mmux_touch_array[0][5]_PWR_8_o_mux_171_OUT431
+                                                       lcd_module/touch_module/touch_array_7_4
+    -------------------------------------------------  ---------------------------
+    Total                                     13.533ns (1.177ns logic, 12.356ns route)
+                                                       (8.7% logic, 91.3% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     86.795ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               lcd_module/touch_module/touch_y_3 (FF)
+  Destination:          lcd_module/touch_module/touch_array_7_4 (FF)
+  Requirement:          100.000ns
+  Data Path Delay:      13.151ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.019ns (0.233 - 0.252)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 100.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: lcd_module/touch_module/touch_y_3 to lcd_module/touch_module/touch_array_7_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X76Y154.AQ     Tcko                  0.447   lcd_module/touch_module/touch_y_4
+                                                       lcd_module/touch_module/touch_y_3
+    SLICE_X16Y160.A1     net (fanout=3)        3.380   lcd_module/touch_module/touch_y_3
+    SLICE_X16Y160.A      Tilo                  0.205   lcd_module/touch_module/touch_y_2
+                                                       lcd_module/touch_module/touch_y[4]_PWR_8_o_LessThan_109_o1
+    SLICE_X52Y124.A5     net (fanout=47)       4.541   lcd_module/touch_module/Madd_n0499_lut<3>
+    SLICE_X52Y124.A      Tilo                  0.203   lcd_module/touch_module/_n0605_inv
+                                                       lcd_module/touch_module/Mmux_touch_array[0][5]_PWR_8_o_mux_171_OUT1411
+    SLICE_X101Y153.A6    net (fanout=8)        4.053   lcd_module/touch_module/Mmux_touch_array[0][5]_PWR_8_o_mux_171_OUT141
+    SLICE_X101Y153.CLK   Tas                   0.322   lcd_module/touch_module/touch_array_7<7>
+                                                       lcd_module/touch_module/Mmux_touch_array[0][5]_PWR_8_o_mux_171_OUT431
+                                                       lcd_module/touch_module/touch_array_7_4
+    -------------------------------------------------  ---------------------------
+    Total                                     13.151ns (1.177ns logic, 11.974ns route)
+                                                       (8.9% logic, 91.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     88.988ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               lcd_module/touch_module/touch_y_0 (FF)
+  Destination:          lcd_module/touch_module/touch_array_7_4 (FF)
+  Requirement:          100.000ns
+  Data Path Delay:      10.665ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.312ns (0.606 - 0.918)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 100.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: lcd_module/touch_module/touch_y_0 to lcd_module/touch_module/touch_array_7_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X16Y160.AQ     Tcko                  0.408   lcd_module/touch_module/touch_y_2
+                                                       lcd_module/touch_module/touch_y_0
+    SLICE_X16Y160.A3     net (fanout=3)        0.933   lcd_module/touch_module/touch_y_0
+    SLICE_X16Y160.A      Tilo                  0.205   lcd_module/touch_module/touch_y_2
+                                                       lcd_module/touch_module/touch_y[4]_PWR_8_o_LessThan_109_o1
+    SLICE_X52Y124.A5     net (fanout=47)       4.541   lcd_module/touch_module/Madd_n0499_lut<3>
+    SLICE_X52Y124.A      Tilo                  0.203   lcd_module/touch_module/_n0605_inv
+                                                       lcd_module/touch_module/Mmux_touch_array[0][5]_PWR_8_o_mux_171_OUT1411
+    SLICE_X101Y153.A6    net (fanout=8)        4.053   lcd_module/touch_module/Mmux_touch_array[0][5]_PWR_8_o_mux_171_OUT141
+    SLICE_X101Y153.CLK   Tas                   0.322   lcd_module/touch_module/touch_array_7<7>
+                                                       lcd_module/touch_module/Mmux_touch_array[0][5]_PWR_8_o_mux_171_OUT431
+                                                       lcd_module/touch_module/touch_array_7_4
+    -------------------------------------------------  ---------------------------
+    Total                                     10.665ns (1.138ns logic, 9.527ns route)
+                                                       (10.7% logic, 89.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point lcd_module/lcd_rom_module/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram (RAMB16_X3Y80.ADDRA12), 323 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     86.576ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               display_name_18 (FF)
+  Destination:          lcd_module/lcd_rom_module/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram (RAM)
+  Requirement:          100.000ns
+  Data Path Delay:      13.273ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.116ns (0.699 - 0.815)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 100.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: display_name_18 to lcd_module/lcd_rom_module/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X10Y150.DQ     Tcko                  0.447   display_name<18>
+                                                       display_name_18
+    SLICE_X59Y119.D6     net (fanout=1)        3.796   display_name<18>
+    SLICE_X59Y119.D      Tilo                  0.259   display_value<31>
+                                                       lcd_module/lcd_draw_module/Mmux_draw_char126
+    SLICE_X52Y118.A1     net (fanout=1)        1.031   lcd_module/lcd_draw_module/Mmux_draw_char125
+    SLICE_X52Y118.A      Tilo                  0.203   lcd_module/lcd_draw_module/Mmux_draw_char124
+                                                       lcd_module/lcd_draw_module/Mmux_draw_char128
+    SLICE_X63Y146.B3     net (fanout=5)        2.589   lcd_module/lcd_draw_module/Madd_GND_3_o_PWR_3_o_add_128_OUT_lut<2>
+    SLICE_X63Y146.B      Tilo                  0.259   lcd_module/lcd_draw_module/Mmux_draw_rom_pc162
+                                                       lcd_module/lcd_draw_module/GND_3_o_draw_char[7]_AND_36_o_SW0
+    SLICE_X63Y146.A5     net (fanout=1)        0.187   lcd_module/N10
+    SLICE_X63Y146.A      Tilo                  0.259   lcd_module/lcd_draw_module/Mmux_draw_rom_pc162
+                                                       lcd_module/lcd_draw_module/GND_3_o_draw_char[7]_AND_36_o
+    SLICE_X63Y146.D3     net (fanout=3)        0.327   lcd_module/lcd_draw_module/GND_3_o_draw_char[7]_AND_36_o
+    SLICE_X63Y146.D      Tilo                  0.259   lcd_module/lcd_draw_module/Mmux_draw_rom_pc162
+                                                       lcd_module/lcd_draw_module/Mmux_draw_rom_pc1621
+    SLICE_X63Y146.C6     net (fanout=3)        0.134   lcd_module/lcd_draw_module/Mmux_draw_rom_pc162
+    SLICE_X63Y146.C      Tilo                  0.259   lcd_module/lcd_draw_module/Mmux_draw_rom_pc162
+                                                       lcd_module/lcd_draw_module/Mmux_draw_rom_pc2021
+    SLICE_X63Y145.C1     net (fanout=2)        0.588   lcd_module/lcd_draw_module/Mmux_draw_rom_pc202
+    SLICE_X63Y145.C      Tilo                  0.259   lcd_module/lcd_draw_module/GND_3_o_draw_char[7]_AND_35_o
+                                                       lcd_module/Mmux_rom_addr99
+    RAMB16_X3Y80.ADDRA12 net (fanout=2)        2.067   lcd_module/rom_addr<8>
+    RAMB16_X3Y80.CLKA    Trcck_ADDRA           0.350   lcd_module/lcd_rom_module/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram
+                                                       lcd_module/lcd_rom_module/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram
+    -------------------------------------------------  ---------------------------
+    Total                                     13.273ns (2.554ns logic, 10.719ns route)
+                                                       (19.2% logic, 80.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     87.111ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               display_name_18 (FF)
+  Destination:          lcd_module/lcd_rom_module/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram (RAM)
+  Requirement:          100.000ns
+  Data Path Delay:      12.738ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.116ns (0.699 - 0.815)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 100.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: display_name_18 to lcd_module/lcd_rom_module/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X10Y150.DQ     Tcko                  0.447   display_name<18>
+                                                       display_name_18
+    SLICE_X59Y119.D6     net (fanout=1)        3.796   display_name<18>
+    SLICE_X59Y119.D      Tilo                  0.259   display_value<31>
+                                                       lcd_module/lcd_draw_module/Mmux_draw_char126
+    SLICE_X52Y118.A1     net (fanout=1)        1.031   lcd_module/lcd_draw_module/Mmux_draw_char125
+    SLICE_X52Y118.A      Tilo                  0.203   lcd_module/lcd_draw_module/Mmux_draw_char124
+                                                       lcd_module/lcd_draw_module/Mmux_draw_char128
+    SLICE_X62Y146.C6     net (fanout=5)        2.408   lcd_module/lcd_draw_module/Madd_GND_3_o_PWR_3_o_add_128_OUT_lut<2>
+    SLICE_X62Y146.C      Tilo                  0.205   a_mips/a_rf/Mmux_Rb[4]_R[31][31]_wide_mux_41_OUT_960
+                                                       lcd_module/lcd_draw_module/draw_char[7]_GND_3_o_equal_124_o<7>1
+    SLICE_X63Y146.D1     net (fanout=3)        0.473   lcd_module/lcd_draw_module/draw_char[7]_GND_3_o_equal_124_o
+    SLICE_X63Y146.D      Tilo                  0.259   lcd_module/lcd_draw_module/Mmux_draw_rom_pc162
+                                                       lcd_module/lcd_draw_module/Mmux_draw_rom_pc1621
+    SLICE_X63Y146.C6     net (fanout=3)        0.134   lcd_module/lcd_draw_module/Mmux_draw_rom_pc162
+    SLICE_X63Y146.C      Tilo                  0.259   lcd_module/lcd_draw_module/Mmux_draw_rom_pc162
+                                                       lcd_module/lcd_draw_module/Mmux_draw_rom_pc2021
+    SLICE_X63Y145.C1     net (fanout=2)        0.588   lcd_module/lcd_draw_module/Mmux_draw_rom_pc202
+    SLICE_X63Y145.C      Tilo                  0.259   lcd_module/lcd_draw_module/GND_3_o_draw_char[7]_AND_35_o
+                                                       lcd_module/Mmux_rom_addr99
+    RAMB16_X3Y80.ADDRA12 net (fanout=2)        2.067   lcd_module/rom_addr<8>
+    RAMB16_X3Y80.CLKA    Trcck_ADDRA           0.350   lcd_module/lcd_rom_module/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram
+                                                       lcd_module/lcd_rom_module/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram
+    -------------------------------------------------  ---------------------------
+    Total                                     12.738ns (2.241ns logic, 10.497ns route)
+                                                       (17.6% logic, 82.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     87.336ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               display_name_18 (FF)
+  Destination:          lcd_module/lcd_rom_module/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram (RAM)
+  Requirement:          100.000ns
+  Data Path Delay:      12.513ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.116ns (0.699 - 0.815)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 100.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: display_name_18 to lcd_module/lcd_rom_module/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X10Y150.DQ     Tcko                  0.447   display_name<18>
+                                                       display_name_18
+    SLICE_X59Y119.D6     net (fanout=1)        3.796   display_name<18>
+    SLICE_X59Y119.D      Tilo                  0.259   display_value<31>
+                                                       lcd_module/lcd_draw_module/Mmux_draw_char126
+    SLICE_X52Y118.A1     net (fanout=1)        1.031   lcd_module/lcd_draw_module/Mmux_draw_char125
+    SLICE_X52Y118.A      Tilo                  0.203   lcd_module/lcd_draw_module/Mmux_draw_char124
+                                                       lcd_module/lcd_draw_module/Mmux_draw_char128
+    SLICE_X63Y145.A3     net (fanout=5)        2.414   lcd_module/lcd_draw_module/Madd_GND_3_o_PWR_3_o_add_128_OUT_lut<2>
+    SLICE_X63Y145.A      Tilo                  0.259   lcd_module/lcd_draw_module/GND_3_o_draw_char[7]_AND_35_o
+                                                       lcd_module/lcd_draw_module/Madd_GND_3_o_PWR_3_o_add_128_OUT_cy<2>11
+    SLICE_X63Y145.B6     net (fanout=2)        0.126   lcd_module/lcd_draw_module/Madd_GND_3_o_PWR_3_o_add_128_OUT_cy<2>
+    SLICE_X63Y145.B      Tilo                  0.259   lcd_module/lcd_draw_module/GND_3_o_draw_char[7]_AND_35_o
+                                                       lcd_module/lcd_draw_module/Madd_GND_3_o_PWR_3_o_add_128_OUT_cy<3>11
+    SLICE_X63Y145.D2     net (fanout=2)        0.434   lcd_module/lcd_draw_module/Madd_GND_3_o_PWR_3_o_add_128_OUT_cy<3>
+    SLICE_X63Y145.DMUX   Tilo                  0.313   lcd_module/lcd_draw_module/GND_3_o_draw_char[7]_AND_35_o
+                                                       lcd_module/Mmux_rom_addr98_SW0
+    SLICE_X63Y145.C4     net (fanout=1)        0.296   lcd_module/N179
+    SLICE_X63Y145.C      Tilo                  0.259   lcd_module/lcd_draw_module/GND_3_o_draw_char[7]_AND_35_o
+                                                       lcd_module/Mmux_rom_addr99
+    RAMB16_X3Y80.ADDRA12 net (fanout=2)        2.067   lcd_module/rom_addr<8>
+    RAMB16_X3Y80.CLKA    Trcck_ADDRA           0.350   lcd_module/lcd_rom_module/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram
+                                                       lcd_module/lcd_rom_module/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram
+    -------------------------------------------------  ---------------------------
+    Total                                     12.513ns (2.349ns logic, 10.164ns route)
+                                                       (18.8% logic, 81.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point lcd_module/lcd_rom_module/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram (RAMB16_X3Y80.ADDRA13), 306 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     86.657ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               display_name_18 (FF)
+  Destination:          lcd_module/lcd_rom_module/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram (RAM)
+  Requirement:          100.000ns
+  Data Path Delay:      13.192ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.116ns (0.699 - 0.815)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 100.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: display_name_18 to lcd_module/lcd_rom_module/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X10Y150.DQ     Tcko                  0.447   display_name<18>
+                                                       display_name_18
+    SLICE_X59Y119.D6     net (fanout=1)        3.796   display_name<18>
+    SLICE_X59Y119.D      Tilo                  0.259   display_value<31>
+                                                       lcd_module/lcd_draw_module/Mmux_draw_char126
+    SLICE_X52Y118.A1     net (fanout=1)        1.031   lcd_module/lcd_draw_module/Mmux_draw_char125
+    SLICE_X52Y118.A      Tilo                  0.203   lcd_module/lcd_draw_module/Mmux_draw_char124
+                                                       lcd_module/lcd_draw_module/Mmux_draw_char128
+    SLICE_X63Y145.A3     net (fanout=5)        2.414   lcd_module/lcd_draw_module/Madd_GND_3_o_PWR_3_o_add_128_OUT_lut<2>
+    SLICE_X63Y145.A      Tilo                  0.259   lcd_module/lcd_draw_module/GND_3_o_draw_char[7]_AND_35_o
+                                                       lcd_module/lcd_draw_module/Madd_GND_3_o_PWR_3_o_add_128_OUT_cy<2>11
+    SLICE_X63Y145.B6     net (fanout=2)        0.126   lcd_module/lcd_draw_module/Madd_GND_3_o_PWR_3_o_add_128_OUT_cy<2>
+    SLICE_X63Y145.B      Tilo                  0.259   lcd_module/lcd_draw_module/GND_3_o_draw_char[7]_AND_35_o
+                                                       lcd_module/lcd_draw_module/Madd_GND_3_o_PWR_3_o_add_128_OUT_cy<3>11
+    SLICE_X63Y148.D2     net (fanout=2)        0.782   lcd_module/lcd_draw_module/Madd_GND_3_o_PWR_3_o_add_128_OUT_cy<3>
+    SLICE_X63Y148.D      Tilo                  0.259   lcd_module/N177
+                                                       lcd_module/Mmux_rom_addr107_SW0
+    SLICE_X63Y148.B2     net (fanout=1)        0.438   lcd_module/N177
+    SLICE_X63Y148.B      Tilo                  0.259   lcd_module/N177
+                                                       lcd_module/Mmux_rom_addr108
+    RAMB16_X3Y80.ADDRA13 net (fanout=2)        2.310   lcd_module/rom_addr<9>
+    RAMB16_X3Y80.CLKA    Trcck_ADDRA           0.350   lcd_module/lcd_rom_module/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram
+                                                       lcd_module/lcd_rom_module/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram
+    -------------------------------------------------  ---------------------------
+    Total                                     13.192ns (2.295ns logic, 10.897ns route)
+                                                       (17.4% logic, 82.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     86.784ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               display_name_18 (FF)
+  Destination:          lcd_module/lcd_rom_module/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram (RAM)
+  Requirement:          100.000ns
+  Data Path Delay:      13.065ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.116ns (0.699 - 0.815)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 100.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: display_name_18 to lcd_module/lcd_rom_module/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X10Y150.DQ     Tcko                  0.447   display_name<18>
+                                                       display_name_18
+    SLICE_X59Y119.D6     net (fanout=1)        3.796   display_name<18>
+    SLICE_X59Y119.D      Tilo                  0.259   display_value<31>
+                                                       lcd_module/lcd_draw_module/Mmux_draw_char126
+    SLICE_X52Y118.A1     net (fanout=1)        1.031   lcd_module/lcd_draw_module/Mmux_draw_char125
+    SLICE_X52Y118.A      Tilo                  0.203   lcd_module/lcd_draw_module/Mmux_draw_char124
+                                                       lcd_module/lcd_draw_module/Mmux_draw_char128
+    SLICE_X63Y146.B3     net (fanout=5)        2.589   lcd_module/lcd_draw_module/Madd_GND_3_o_PWR_3_o_add_128_OUT_lut<2>
+    SLICE_X63Y146.B      Tilo                  0.259   lcd_module/lcd_draw_module/Mmux_draw_rom_pc162
+                                                       lcd_module/lcd_draw_module/GND_3_o_draw_char[7]_AND_36_o_SW0
+    SLICE_X63Y146.A5     net (fanout=1)        0.187   lcd_module/N10
+    SLICE_X63Y146.A      Tilo                  0.259   lcd_module/lcd_draw_module/Mmux_draw_rom_pc162
+                                                       lcd_module/lcd_draw_module/GND_3_o_draw_char[7]_AND_36_o
+    SLICE_X63Y146.D3     net (fanout=3)        0.327   lcd_module/lcd_draw_module/GND_3_o_draw_char[7]_AND_36_o
+    SLICE_X63Y146.D      Tilo                  0.259   lcd_module/lcd_draw_module/Mmux_draw_rom_pc162
+                                                       lcd_module/lcd_draw_module/Mmux_draw_rom_pc1621
+    SLICE_X63Y148.B4     net (fanout=3)        0.530   lcd_module/lcd_draw_module/Mmux_draw_rom_pc162
+    SLICE_X63Y148.B      Tilo                  0.259   lcd_module/N177
+                                                       lcd_module/Mmux_rom_addr108
+    RAMB16_X3Y80.ADDRA13 net (fanout=2)        2.310   lcd_module/rom_addr<9>
+    RAMB16_X3Y80.CLKA    Trcck_ADDRA           0.350   lcd_module/lcd_rom_module/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram
+                                                       lcd_module/lcd_rom_module/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram
+    -------------------------------------------------  ---------------------------
+    Total                                     13.065ns (2.295ns logic, 10.770ns route)
+                                                       (17.6% logic, 82.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     87.319ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               display_name_18 (FF)
+  Destination:          lcd_module/lcd_rom_module/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram (RAM)
+  Requirement:          100.000ns
+  Data Path Delay:      12.530ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.116ns (0.699 - 0.815)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 100.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: display_name_18 to lcd_module/lcd_rom_module/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X10Y150.DQ     Tcko                  0.447   display_name<18>
+                                                       display_name_18
+    SLICE_X59Y119.D6     net (fanout=1)        3.796   display_name<18>
+    SLICE_X59Y119.D      Tilo                  0.259   display_value<31>
+                                                       lcd_module/lcd_draw_module/Mmux_draw_char126
+    SLICE_X52Y118.A1     net (fanout=1)        1.031   lcd_module/lcd_draw_module/Mmux_draw_char125
+    SLICE_X52Y118.A      Tilo                  0.203   lcd_module/lcd_draw_module/Mmux_draw_char124
+                                                       lcd_module/lcd_draw_module/Mmux_draw_char128
+    SLICE_X62Y146.C6     net (fanout=5)        2.408   lcd_module/lcd_draw_module/Madd_GND_3_o_PWR_3_o_add_128_OUT_lut<2>
+    SLICE_X62Y146.C      Tilo                  0.205   a_mips/a_rf/Mmux_Rb[4]_R[31][31]_wide_mux_41_OUT_960
+                                                       lcd_module/lcd_draw_module/draw_char[7]_GND_3_o_equal_124_o<7>1
+    SLICE_X63Y146.D1     net (fanout=3)        0.473   lcd_module/lcd_draw_module/draw_char[7]_GND_3_o_equal_124_o
+    SLICE_X63Y146.D      Tilo                  0.259   lcd_module/lcd_draw_module/Mmux_draw_rom_pc162
+                                                       lcd_module/lcd_draw_module/Mmux_draw_rom_pc1621
+    SLICE_X63Y148.B4     net (fanout=3)        0.530   lcd_module/lcd_draw_module/Mmux_draw_rom_pc162
+    SLICE_X63Y148.B      Tilo                  0.259   lcd_module/N177
+                                                       lcd_module/Mmux_rom_addr108
+    RAMB16_X3Y80.ADDRA13 net (fanout=2)        2.310   lcd_module/rom_addr<9>
+    RAMB16_X3Y80.CLKA    Trcck_ADDRA           0.350   lcd_module/lcd_rom_module/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram
+                                                       lcd_module/lcd_rom_module/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram
+    -------------------------------------------------  ---------------------------
+    Total                                     12.530ns (1.982ns logic, 10.548ns route)
+                                                       (15.8% logic, 84.2% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_clk = PERIOD TIMEGRP "clk" 100 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point lcd_module/touch_module/clk_count_5 (SLICE_X38Y167.D6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.416ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               lcd_module/touch_module/clk_count_5 (FF)
+  Destination:          lcd_module/touch_module/clk_count_5 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.416ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 100.000ns
+  Destination Clock:    clk_BUFGP rising at 100.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: lcd_module/touch_module/clk_count_5 to lcd_module/touch_module/clk_count_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X38Y167.DQ     Tcko                  0.200   lcd_module/touch_module/clk_count<5>
+                                                       lcd_module/touch_module/clk_count_5
+    SLICE_X38Y167.D6     net (fanout=7)        0.026   lcd_module/touch_module/clk_count<5>
+    SLICE_X38Y167.CLK    Tah         (-Th)    -0.190   lcd_module/touch_module/clk_count<5>
+                                                       lcd_module/touch_module/Mcount_clk_count_xor<5>11
+                                                       lcd_module/touch_module/clk_count_5
+    -------------------------------------------------  ---------------------------
+    Total                                      0.416ns (0.390ns logic, 0.026ns route)
+                                                       (93.8% logic, 6.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point lcd_module/draw_begin (SLICE_X66Y159.A6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.416ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               lcd_module/draw_begin (FF)
+  Destination:          lcd_module/draw_begin (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.416ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 100.000ns
+  Destination Clock:    clk_BUFGP rising at 100.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: lcd_module/draw_begin to lcd_module/draw_begin
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X66Y159.AQ     Tcko                  0.200   lcd_module/draw_begin
+                                                       lcd_module/draw_begin
+    SLICE_X66Y159.A6     net (fanout=5)        0.026   lcd_module/draw_begin
+    SLICE_X66Y159.CLK    Tah         (-Th)    -0.190   lcd_module/draw_begin
+                                                       lcd_module/draw_begin_glue_set
+                                                       lcd_module/draw_begin
+    -------------------------------------------------  ---------------------------
+    Total                                      0.416ns (0.390ns logic, 0.026ns route)
+                                                       (93.8% logic, 6.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point lcd_module/touch_module/soft_rst_end (SLICE_X82Y155.A6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.427ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               lcd_module/touch_module/soft_rst_end (FF)
+  Destination:          lcd_module/touch_module/soft_rst_end (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.427ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 100.000ns
+  Destination Clock:    clk_BUFGP rising at 100.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: lcd_module/touch_module/soft_rst_end to lcd_module/touch_module/soft_rst_end
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X82Y155.AQ     Tcko                  0.200   lcd_module/touch_module/soft_rst_end
+                                                       lcd_module/touch_module/soft_rst_end
+    SLICE_X82Y155.A6     net (fanout=4)        0.037   lcd_module/touch_module/soft_rst_end
+    SLICE_X82Y155.CLK    Tah         (-Th)    -0.190   lcd_module/touch_module/soft_rst_end
+                                                       lcd_module/touch_module/soft_rst_end_glue_set
+                                                       lcd_module/touch_module/soft_rst_end
+    -------------------------------------------------  ---------------------------
+    Total                                      0.427ns (0.390ns logic, 0.037ns route)
+                                                       (91.3% logic, 8.7% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_clk = PERIOD TIMEGRP "clk" 100 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 96.876ns (period - min period limit)
+  Period: 100.000ns
+  Min period limit: 3.124ns (320.102MHz) (Trper_CLKA(Fmax))
+  Physical resource: lcd_module/lcd_rom_module/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram/CLKA
+  Logical resource: lcd_module/lcd_rom_module/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram/CLKA
+  Location pin: RAMB16_X3Y80.CLKA
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 96.876ns (period - min period limit)
+  Period: 100.000ns
+  Min period limit: 3.124ns (320.102MHz) (Trper_CLKA(Fmax))
+  Physical resource: lcd_module/lcd_rom_module/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram/CLKA
+  Logical resource: lcd_module/lcd_rom_module/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram/CLKA
+  Location pin: RAMB16_X3Y78.CLKA
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 98.270ns (period - min period limit)
+  Period: 100.000ns
+  Min period limit: 1.730ns (578.035MHz) (Tbcper_I)
+  Physical resource: clk_BUFGP/BUFG/I0
+  Logical resource: clk_BUFGP/BUFG/I0
+  Location pin: BUFGMUX_X2Y10.I0
+  Clock network: clk_BUFGP/IBUFG
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   13.587|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 7280 paths, 0 nets, and 1414 connections
+
+Design statistics:
+   Minimum period:  13.587ns{1}   (Maximum frequency:  73.600MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Tue Jun 27 23:01:48 2017 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 442 MB
+
+
+

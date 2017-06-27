@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=D:\ise3\pipeline_cpu_display.ncd
+OUTFILE=D:\ise3\pipeline_cpu_display.bit
+FAMILY=Spartan6
+PART=xc6slx150-3fgg484
+WORKINGDIR=D:\ise3
+LICENSE=ISE
+USER_INFO=135256_15690819_173552794_661

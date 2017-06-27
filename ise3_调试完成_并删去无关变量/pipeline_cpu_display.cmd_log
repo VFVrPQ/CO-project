@@ -1,0 +1,49 @@
+xst -intstyle ise -ifn "D:/ise3/pipeline_cpu_display.xst" -ofn "D:/ise3/pipeline_cpu_display.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx150-fgg484-3 pipeline_cpu_display.ngc pipeline_cpu_display.ngd  
+map -intstyle ise -p xc6slx150-fgg484-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o pipeline_cpu_display_map.ncd pipeline_cpu_display.ngd pipeline_cpu_display.pcf 
+par -w -intstyle ise -ol high -mt off pipeline_cpu_display_map.ncd pipeline_cpu_display.ncd pipeline_cpu_display.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml pipeline_cpu_display.twx pipeline_cpu_display.ncd -o pipeline_cpu_display.twr pipeline_cpu_display.pcf 
+bitgen -intstyle ise -f pipeline_cpu_display.ut pipeline_cpu_display.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pipeline_cpu.ucf -p xc6slx150-fgg484-3 pipeline_cpu_display.ngc pipeline_cpu_display.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pipeline_cpu.ucf -p xc6slx150-fgg484-3 pipeline_cpu_display.ngc pipeline_cpu_display.ngd  
+map -intstyle ise -p xc6slx150-fgg484-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o pipeline_cpu_display_map.ncd pipeline_cpu_display.ngd pipeline_cpu_display.pcf 
+map -intstyle ise -p xc6slx150-fgg484-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o pipeline_cpu_display_map.ncd pipeline_cpu_display.ngd pipeline_cpu_display.pcf 
+par -w -intstyle ise -ol high -mt off pipeline_cpu_display_map.ncd pipeline_cpu_display.ncd pipeline_cpu_display.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml pipeline_cpu_display.twx pipeline_cpu_display.ncd -o pipeline_cpu_display.twr pipeline_cpu_display.pcf -ucf pipeline_cpu.ucf 
+bitgen -intstyle ise -f pipeline_cpu_display.ut pipeline_cpu_display.ncd 
+xst -intstyle ise -ifn "D:/ise3/pipeline_cpu_display.xst" -ofn "D:/ise3/pipeline_cpu_display.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pipeline_cpu.ucf -p xc6slx150-fgg484-3 pipeline_cpu_display.ngc pipeline_cpu_display.ngd  
+map -intstyle ise -p xc6slx150-fgg484-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o pipeline_cpu_display_map.ncd pipeline_cpu_display.ngd pipeline_cpu_display.pcf 
+map -intstyle ise -p xc6slx150-fgg484-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o pipeline_cpu_display_map.ncd pipeline_cpu_display.ngd pipeline_cpu_display.pcf 
+par -w -intstyle ise -ol high -mt off pipeline_cpu_display_map.ncd pipeline_cpu_display.ncd pipeline_cpu_display.pcf 
+bitgen -intstyle ise -f pipeline_cpu_display.ut pipeline_cpu_display.ncd 
+xst -intstyle ise -ifn "D:/ise3/pipeline_cpu_display.xst" -ofn "D:/ise3/pipeline_cpu_display.syr" 
+xst -intstyle ise -ifn "D:/ise3/pipeline_cpu_display.xst" -ofn "D:/ise3/pipeline_cpu_display.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pipeline_cpu.ucf -p xc6slx150-fgg484-3 pipeline_cpu_display.ngc pipeline_cpu_display.ngd  
+map -intstyle ise -p xc6slx150-fgg484-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o pipeline_cpu_display_map.ncd pipeline_cpu_display.ngd pipeline_cpu_display.pcf 
+par -w -intstyle ise -ol high -mt off pipeline_cpu_display_map.ncd pipeline_cpu_display.ncd pipeline_cpu_display.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml pipeline_cpu_display.twx pipeline_cpu_display.ncd -o pipeline_cpu_display.twr pipeline_cpu_display.pcf -ucf pipeline_cpu.ucf 
+bitgen -intstyle ise -f pipeline_cpu_display.ut pipeline_cpu_display.ncd 
+xst -intstyle ise -ifn "D:/ise3/pipeline_cpu_display.xst" -ofn "D:/ise3/pipeline_cpu_display.syr" 
+xst -intstyle ise -ifn "D:/ise3/pipeline_cpu_display.xst" -ofn "D:/ise3/pipeline_cpu_display.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pipeline_cpu.ucf -p xc6slx150-fgg484-3 pipeline_cpu_display.ngc pipeline_cpu_display.ngd  
+map -intstyle ise -p xc6slx150-fgg484-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o pipeline_cpu_display_map.ncd pipeline_cpu_display.ngd pipeline_cpu_display.pcf 
+par -w -intstyle ise -ol high -mt off pipeline_cpu_display_map.ncd pipeline_cpu_display.ncd pipeline_cpu_display.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml pipeline_cpu_display.twx pipeline_cpu_display.ncd -o pipeline_cpu_display.twr pipeline_cpu_display.pcf -ucf pipeline_cpu.ucf 
+bitgen -intstyle ise -f pipeline_cpu_display.ut pipeline_cpu_display.ncd 
+xst -intstyle ise -ifn "D:/ise3/pipeline_cpu_display.xst" -ofn "D:/ise3/pipeline_cpu_display.syr" 
+xst -intstyle ise -ifn "D:/ise3/pipeline_cpu_display.xst" -ofn "D:/ise3/pipeline_cpu_display.syr" 
+xst -intstyle ise -ifn "D:/ise3/pipeline_cpu_display.xst" -ofn "D:/ise3/pipeline_cpu_display.syr" 
+xst -intstyle ise -ifn "D:/ise3/pipeline_cpu_display.xst" -ofn "D:/ise3/pipeline_cpu_display.syr" 
+xst -intstyle ise -ifn "D:/ise3/pipeline_cpu_display.xst" -ofn "D:/ise3/pipeline_cpu_display.syr" 
+xst -intstyle ise -ifn "D:/ise3/pipeline_cpu_display.xst" -ofn "D:/ise3/pipeline_cpu_display.syr" 
+xst -intstyle ise -ifn "D:/ise3/pipeline_cpu_display.xst" -ofn "D:/ise3/pipeline_cpu_display.syr" 
+xst -intstyle ise -ifn "D:/ise3/pipeline_cpu_display.xst" -ofn "D:/ise3/pipeline_cpu_display.syr" 
+xst -intstyle ise -ifn "D:/ise3/pipeline_cpu_display.xst" -ofn "D:/ise3/pipeline_cpu_display.syr" 
+xst -intstyle ise -ifn "D:/ise3/pipeline_cpu_display.xst" -ofn "D:/ise3/pipeline_cpu_display.syr" 
+xst -intstyle ise -ifn "D:/ise3/pipeline_cpu_display.xst" -ofn "D:/ise3/pipeline_cpu_display.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pipeline_cpu.ucf -p xc6slx150-fgg484-3 pipeline_cpu_display.ngc pipeline_cpu_display.ngd  
+map -intstyle ise -p xc6slx150-fgg484-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o pipeline_cpu_display_map.ncd pipeline_cpu_display.ngd pipeline_cpu_display.pcf 
+par -w -intstyle ise -ol high -mt off pipeline_cpu_display_map.ncd pipeline_cpu_display.ncd pipeline_cpu_display.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml pipeline_cpu_display.twx pipeline_cpu_display.ncd -o pipeline_cpu_display.twr pipeline_cpu_display.pcf -ucf pipeline_cpu.ucf 
+bitgen -intstyle ise -f pipeline_cpu_display.ut pipeline_cpu_display.ncd 
