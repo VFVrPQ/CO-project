@@ -1,6 +1,6 @@
-# project1 VerilogHDL单周期CPU 10+条指令
+# project1 VerilogHDL单周期CPU 9条指令
 
-project1包含两个文件夹project1和project1_model，都实现了单周期CPU 10+条指令，主要差异在ALU.v上。 
+project1包含两个文件夹project1和project1_model，都实现了单周期CPU 9条指令，主要差异在ALU.v上。 
 project1_model中ALU.v写的有点繁琐了，建议使用project1。
 
 ## Project1
