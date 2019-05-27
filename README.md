@@ -4,7 +4,7 @@ Mips 处理器仿真设计(readme.md学习自https://github.com/HaleLu/mips.git)
 
 ## 开发语言、工具和环境
 
-Window 7 环境下。采用 Verilog 语言开发。 
+Window 7 环境下。采用 Verilog 语言开发。   
 推荐vs code写代码，modelsim运行。
 
 
