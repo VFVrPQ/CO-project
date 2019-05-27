@@ -3,7 +3,7 @@
 project1包含两个文件夹project1和project1_model，都实现了单周期CPU 10+条指令，主要差异在ALU.v上。 
 project1_model中ALU.v写的有点繁琐了，建议使用project1。
 
-## Project_1
+## Project1
 
 学习自：https://github.com/HaleLu/mips.git
 
@@ -23,11 +23,11 @@ project1_model中ALU.v写的有点繁琐了，建议使用project1。
 输入接口：ALUctr（3位，运算符编码）,  A, B（32位，运算数） 
 输出接口：Zero（结果是否为0）, Result（32位，运算结果）  
 ALUctr的说明：  
-　　000： Result = A + B  
-　　001： Result = A - B  
-　　010： Result = A | B  
-　　011： Result = A & B  
-　　100： Result = A < B ? 1 : 0
+- 000： Result = A + B  
+- 001： Result = A - B  
+- 010： Result = A | B  
+- 011： Result = A & B  
+- 100： Result = A < B ? 1 : 0
 
 #### dm.v
 
