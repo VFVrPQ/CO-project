@@ -1,6 +1,6 @@
 
 # mips
-Mips 处理器仿真设计(readme.md莫房子：https://github.com/HaleLu/mips.git)
+Mips 处理器仿真设计(readme.md学习自https://github.com/HaleLu/mips.git)
 
 ## 开发语言、工具和环境
 
