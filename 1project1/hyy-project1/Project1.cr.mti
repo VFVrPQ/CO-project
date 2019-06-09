@@ -1,0 +1,85 @@
+D:/org/Project1/dm.v {1 {vlog -work work -stats=none D:/org/Project1/dm.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module dm_4k
+
+Top level modules:
+	dm_4k
+
+} {} {}} D:/org/Project1/mips.v {1 {vlog -work work -stats=none D:/org/Project1/mips.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module mips
+
+Top level modules:
+	mips
+
+} {} {}} D:/org/Project1/pc.v {1 {vlog -work work -stats=none D:/org/Project1/pc.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module pc
+
+Top level modules:
+	pc
+
+} {} {}} D:/org/Project1/ALUctrl.v {1 {vlog -work work -stats=none D:/org/Project1/ALUctrl.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module ALUctrl
+
+Top level modules:
+	ALUctrl
+
+} {} {}} D:/org/Project1/npc.v {1 {vlog -work work -stats=none D:/org/Project1/npc.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module npc
+
+Top level modules:
+	npc
+
+} {} {}} D:/org/Project1/ext.v {1 {vlog -work work -stats=none D:/org/Project1/ext.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module ext
+
+Top level modules:
+	ext
+
+} {} {}} D:/org/Project1/alu.v {1 {vlog -work work -stats=none D:/org/Project1/alu.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} D:/org/Project1/mux.v {1 {vlog -work work -stats=none D:/org/Project1/mux.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module MUX2
+
+Top level modules:
+	MUX2
+
+} {} {}} D:/org/Project1/ctrl.v {1 {vlog -work work -stats=none D:/org/Project1/ctrl.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module ctrl
+
+Top level modules:
+	ctrl
+
+} {} {}} D:/org/Project1/reg.v {1 {vlog -work work -stats=none D:/org/Project1/reg.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module rf
+
+Top level modules:
+	rf
+
+} {} {}} D:/org/Project1/im.v {1 {vlog -work work -stats=none D:/org/Project1/im.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module im_4k
+
+Top level modules:
+	im_4k
+
+} {} {}} D:/org/Project1/testbench.v {1 {vlog -work work -stats=none D:/org/Project1/testbench.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module testbench
+
+Top level modules:
+	testbench
+
+} {} {}}
