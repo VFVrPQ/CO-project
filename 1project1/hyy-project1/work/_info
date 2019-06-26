@@ -1,0 +1,295 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/mode
+vALU
+!s110 1561458208
+!i10b 1
+!s100 Icog:YdCSj9GeN4RRJ]:g3
+I4=a0XXQ4hYGE60SN2K4G_3
+Z0 VDg1SIo80bB@j0V0VzS_@n1
+Z1 dD:/org/Project1
+w1561380919
+8D:/org/Project1/alu.v
+FD:/org/Project1/alu.v
+L0 1
+Z2 OV;L;10.4d;61
+r1
+!s85 0
+31
+!s108 1561458208.000000
+!s107 D:/org/Project1/alu.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/org/Project1/alu.v|
+!i113 1
+Z3 o-work work
+n@a@l@u
+vALUctrl
+!s110 1561463858
+!i10b 1
+!s100 VgWZS7BRiU`klb^g=;R?h2
+IinV0JlHVzdX3^YWXHi`hB0
+R0
+R1
+w1561463852
+8D:/org/Project1/ALUctrl.v
+FD:/org/Project1/ALUctrl.v
+L0 1
+R2
+r1
+!s85 0
+31
+!s108 1561463857.000000
+!s107 D:/org/Project1/ALUctrl.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/org/Project1/ALUctrl.v|
+!i113 1
+R3
+n@a@l@uctrl
+vctrl
+!s110 1561545835
+!i10b 1
+!s100 AQLK^W=Ihj7MfhdGkTG>T0
+IBD]^Z<?Ee^j89QJ;N]1hG0
+R0
+R1
+w1561545826
+8D:/org/Project1/ctrl.v
+FD:/org/Project1/ctrl.v
+L0 2
+R2
+r1
+!s85 0
+31
+!s108 1561545835.000000
+!s107 D:/org/Project1/ctrl.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/org/Project1/ctrl.v|
+!i113 1
+R3
+vdm_4k
+!s110 1561544946
+!i10b 1
+!s100 ZebRVf]>4d[F8cSHFY41m0
+IG69CSJ=78VO`>KKWGYSEh0
+R0
+R1
+w1561544940
+8D:/org/Project1/dm.v
+FD:/org/Project1/dm.v
+L0 2
+R2
+r1
+!s85 0
+31
+!s108 1561544946.000000
+!s107 D:/org/Project1/dm.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/org/Project1/dm.v|
+!i113 1
+R3
+vext
+!s110 1561458210
+!i10b 1
+!s100 3IVKz8YK7FGfc@3lbo=mf2
+IC4R@AF<`[l9bkORmzV2[o3
+R0
+R1
+w1559711851
+8D:/org/Project1/ext.v
+FD:/org/Project1/ext.v
+L0 4
+R2
+r1
+!s85 0
+31
+!s108 1561458210.000000
+!s107 D:/org/Project1/ext.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/org/Project1/ext.v|
+!i113 1
+R3
+vim_4k
+!s110 1561458199
+!i10b 1
+!s100 A936P;]_<UBVC>2]CaURh2
+I=TBlGCUH5ZWWOemGdmcgQ3
+R0
+R1
+w1559715355
+8D:/org/Project1/im.v
+FD:/org/Project1/im.v
+L0 2
+R2
+r1
+!s85 0
+31
+!s108 1561458199.000000
+!s107 D:/org/Project1/im.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/org/Project1/im.v|
+!i113 1
+R3
+vmips
+!s110 1561550372
+!i10b 1
+!s100 HMSUG@?VdVH]@e4ogA95:3
+IEFlh6k4RTA3[;k`Fe?RcX0
+R0
+R1
+w1561550337
+8D:/org/Project1/mips.v
+FD:/org/Project1/mips.v
+L0 1
+R2
+r1
+!s85 0
+31
+!s108 1561550372.000000
+!s107 D:/org/Project1/mips.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/org/Project1/mips.v|
+!i113 1
+R3
+vMUX2
+Z4 !s110 1561544636
+!i10b 1
+!s100 A8Bb=[ZA@fVQ53nLPUnBi0
+IZCh`60VB;Zif7cb?Z^X`P1
+R0
+R1
+Z5 w1561473631
+Z6 8D:/org/Project1/mux.v
+Z7 FD:/org/Project1/mux.v
+L0 2
+R2
+r1
+!s85 0
+31
+Z8 !s108 1561544636.000000
+Z9 !s107 D:/org/Project1/mux.v|
+Z10 !s90 -reportprogress|300|-work|work|-stats=none|D:/org/Project1/mux.v|
+!i113 1
+R3
+n@m@u@x2
+vMUX3
+R4
+!i10b 1
+!s100 IbgJTN[BFbdIZd<POhDzb3
+I<Ah6?ObN21XV`0;i?nTWb1
+R0
+R1
+R5
+R6
+R7
+L0 11
+R2
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R3
+n@m@u@x3
+vMUX4
+R4
+!i10b 1
+!s100 :lkBnB>T]O73iEZogQ[?z2
+IVz8]J54>@_J70L`SR0FcJ0
+R0
+R1
+R5
+R6
+R7
+L0 28
+R2
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R3
+n@m@u@x4
+vnpc
+!s110 1561544633
+!i10b 1
+!s100 R12S9R78<`MQ=@MVHkJc90
+I?ONB:QASORP>>ER9iHi4Q1
+R0
+R1
+w1561543725
+8D:/org/Project1/npc.v
+FD:/org/Project1/npc.v
+L0 2
+R2
+r1
+!s85 0
+31
+!s108 1561544633.000000
+!s107 D:/org/Project1/npc.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/org/Project1/npc.v|
+!i113 1
+R3
+vpc
+!s110 1561458202
+!i10b 1
+!s100 biYe@8I;X57RJNT6m[b6]3
+IVI<H?:V@hzm8ioWkoQb]M1
+R0
+R1
+w1560142228
+8D:/org/Project1/pc.v
+FD:/org/Project1/pc.v
+L0 2
+R2
+r1
+!s85 0
+31
+!s108 1561458201.000000
+!s107 D:/org/Project1/pc.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/org/Project1/pc.v|
+!i113 1
+R3
+vrf
+!s110 1561544645
+!i10b 1
+!s100 KJS7]_VZ?JEe^?JbeIkRo3
+IU`BkdDBETF[mKOFDWAAlW1
+R0
+R1
+w1561472995
+8D:/org/Project1/reg.v
+FD:/org/Project1/reg.v
+L0 2
+R2
+r1
+!s85 0
+31
+!s108 1561544645.000000
+!s107 D:/org/Project1/reg.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/org/Project1/reg.v|
+!i113 1
+R3
+vtestbench
+!s110 1561458233
+!i10b 1
+!s100 d;]0A0haD[PR^P^VZ5fQK3
+I][AD4H4bi>a9QOaCh?nFG1
+R0
+R1
+w1560151755
+8D:/org/Project1/testbench.v
+FD:/org/Project1/testbench.v
+L0 1
+R2
+r1
+!s85 0
+31
+!s108 1561458232.000000
+!s107 D:/org/Project1/testbench.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/org/Project1/testbench.v|
+!i113 1
+R3

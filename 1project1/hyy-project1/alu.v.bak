@@ -32,12 +32,12 @@ reg [31:0]ADD_result;
 assign SUBctr = ALUctr[2];
 assign OVctr  = !ALUctr[1]&ALUctr[0];
 assign SIGctr = ALUctr[0];
-assign OPctr[2] = ALUctr[3];
-assign OPctr[1] = (!ALUctr[3]&ALUctr[2]&ALUctr[1])+(ALUctr[3]&!ALUctr[2]&ALUctr[1])+(!ALUctr[3]&!ALUctr[2]&ALUctr[1]&ALUctr[0])+(ALUctr[3]&ALUctr[2]);
+assign OPctr[2] = (ALUctr[3]&!ALUctr[2])+(ALUctr[3]&ALUctr[2]&!ALUctr[1]&ALUctr[0]);
+assign OPctr[1] = (!ALUctr[3]&ALUctr[2]&ALUctr[1])+(ALUctr[3]&!ALUctr[2]&ALUctr[1])+(!ALUctr[3]&!ALUctr[2]&ALUctr[1]&ALUctr[0])+(ALUctr[3]&ALUctr[2]&!ALUctr[1]&ALUctr[0]);
 assign OPctr[0] = (!ALUctr[3]&!ALUctr[2]&ALUctr[1])+(ALUctr[3]&!ALUctr[2]&!ALUctr[1]&ALUctr[0]);
-assign Shfctr[2] = (ALUctr[3]&ALUctr[2]&ALUctr[1])+(ALUctr[3]&ALUctr[2]&!ALUctr[1]&!ALUctr[0]);
-assign Shfctr[1] = (ALUctr[3]&ALUctr[2]&!ALUctr[1]&ALUctr[0])+(ALUctr[3]&ALUctr[2]&ALUctr[1]&!ALUctr[0]);
-assign Shfctr[0] = (ALUctr[3]&ALUctr[2]&!ALUctr[1]&ALUctr[0])+(ALUctr[3]&!ALUctr[2]&ALUctr[1]&ALUctr[0])+(ALUctr[3]&ALUctr[2]&ALUctr[1]);
+assign Shfctr[2] = (ALUctr[3]&!ALUctr[2]&ALUctr[1])+(ALUctr[3]&ALUctr[2]&!ALUctr[1]&ALUctr[0]);
+assign Shfctr[1] = (ALUctr[3]&ALUctr[2]&!ALUctr[1]&ALUctr[0]);
+assign Shfctr[0] = (ALUctr[3]&ALUctr[2]&!ALUctr[1]&ALUctr[0])+(ALUctr[3]&!ALUctr[2]&ALUctr[1]&ALUctr[0]);
 
 //add
 assign Cin = SUBctr;
