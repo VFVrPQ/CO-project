@@ -24,7 +24,7 @@ npc      a_npc( .busA(busA), .imm16(ins[15:0]), .branch(Branch), .zero(zero), .j
 //get instruction
 im_4k    a_im_4k( .addr(PC[11:2]), .dout(ins) );
 //get ctrl
-ctrl     a_ctrl( .op(ins[31:26]), .RegWr(RegWr), .RegDst(RegDst), .ExtOp(ExtOp), .ALUSrc(ALUSrc), .branop(ins[20:16]), .Branch(Branch), .Jump(Jump), .MemWr(MemWr), .MemtoReg(MemtoReg));
+ctrl     a_ctrl( .op(ins[31:26]), .func(ins[5:0]), .RegWr(RegWr), .RegDst(RegDst), .ExtOp(ExtOp), .ALUSrc(ALUSrc), .branop(ins[20:16]), .Branch(Branch), .Jump(Jump), .MemWr(MemWr), .MemtoReg(MemtoReg));
 ALUctrl  a_ALUctr( .op(ins[31:26]), .func(ins[5:0]), .ALUctr(ALUctr));
 //fetch from register file
 MUX3     a_MUX3_Rw( .a(ins[20:16]), .b(ins[15:11]), .c(5'b11111), .ctr(RegDst), .y(Rw));//选择器i  or R

@@ -64,12 +64,15 @@ MUX2  #32 smux_Less_result(ext0,ext1,less,Less_result);
 
 //sll srl sllv sra srav srlv
 assign shf = (Shfctr[2]==1)? A:C;
+wire [63:0] temp;
+assign temp = {   {32{B[31]}},B[31:0]}>>shf;
 always @ (Shfctr or shf or B)
   begin
 	case (Shfctr[1:0])
 		2'b00 : assign  Shf_result[31:0] = B<<shf;
 		2'b01 : assign  Shf_result[31:0] = B>>shf;
-		2'b11 :	assign  Shf_result[31:0] = ( { {31{B}}, 1'b0 } << (~shf[4:0]) ) | ( B >> shf[4:0] ); 
+		2'b11 :	assign  Shf_result[31:0] = temp[31:0];
+		//( { {31{B}}, 1'b0 } << (~shf[4:0]) ) | ( B >> shf ); 
 endcase
   end
 

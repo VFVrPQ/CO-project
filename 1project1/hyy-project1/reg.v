@@ -14,6 +14,7 @@ assign busB = (Rb != 0) ? Rf[Rb] : 0;
 initial
 begin 
 	Rf[0]=0;
+	Rf[1] = 32'd1;
 	Rf[8]  = 32'h0000_0001;
 	Rf[11] = 32'h0000_1111;
 	Rf[12] = 32'h0000_1010;

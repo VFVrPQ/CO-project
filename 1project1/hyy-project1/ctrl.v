@@ -23,9 +23,7 @@ initial begin
         assign ALUSrc   = 0;
         assign Branch   = 000;
       //  assign Jump     = 00;
-        assign Jump = (func==6'b001001||func==6'b001000)  ? 2'b10 : 2'b00;
-        assign RegDst = (func==6'b001001)  ? 2'b10 : 2'b01;
-        assign MemtoReg = (func==6'b001001)  ? 2'b11 : 2'b00;
+        
         assign MemWr    = 000;
         assign MemtoReg = 00;
 end
@@ -35,13 +33,16 @@ always @(*)begin
     case(op)
     R:begin//R  add,sub,addu,slt,or,and
         assign RegWr    = 1;
-        assign RegDst   = 01; 
+       // assign RegDst   = 01; 
         assign ExtOp    = 0;//x
         assign ALUSrc   = 0;
         assign Branch   = 000;
-        assign Jump     = 00;
+        //assign Jump     = 00;
         assign MemWr    = 000;
-        assign MemtoReg = 00;
+        //assign MemtoReg = 00;
+        assign Jump = (func==6'b001001||func==6'b001000)  ? 2'b10 : 2'b00;
+        assign RegDst = (func==6'b001001)  ? 2'b10 : 2'b01;
+        assign MemtoReg = (func==6'b001001)  ? 2'b11 : 2'b00;
     end
     ORI:begin//ori
         assign RegWr    = 1;

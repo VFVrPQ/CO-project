@@ -11,7 +11,7 @@ input[31:2] PC;
 output reg [31:2] NPC;
 
 wire[31:2] PC_4 = PC[31:2] + 1;
-wire[31:2] PC_br1 = PC[31:2] + 1 + { { 14{ imm16[15]}} , imm16 };
+wire[31:2] PC_br1 = PC[31:2]  + { { 14{ imm16[15]}} , imm16 };
 wire[31:2] PC_ju = { PC[31:28], target[25:0] };
 
 reg[31:2] npc1;
