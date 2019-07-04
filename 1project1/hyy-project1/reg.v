@@ -26,7 +26,7 @@ begin
 	Rf[21] = 32'h0000_0005;
 end
 
-always @ (negedge Clk)
+always @ (posedge Clk)
 	if(WrEn)
 		Rf[Rw] <= busW;
 

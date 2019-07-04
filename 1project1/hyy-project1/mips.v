@@ -27,7 +27,7 @@ im_4k    a_im_4k( .addr(PC[11:2]), .dout(ins) );
 ctrl     a_ctrl( .op(ins[31:26]), .func(ins[5:0]), .RegWr(RegWr), .RegDst(RegDst), .ExtOp(ExtOp), .ALUSrc(ALUSrc), .branop(ins[20:16]), .Branch(Branch), .Jump(Jump), .MemWr(MemWr), .MemtoReg(MemtoReg));
 ALUctrl  a_ALUctr( .op(ins[31:26]), .func(ins[5:0]), .ALUctr(ALUctr));
 //fetch from register file
-MUX3     a_MUX3_Rw( .a(ins[20:16]), .b(ins[15:11]), .c(5'b11111), .ctr(RegDst), .y(Rw));//选择器i  or R
+MUX3     #(5) a_MUX3_Rw( .a(ins[20:16]), .b(ins[15:11]), .c(5'b11111), .ctr(RegDst), .y(Rw));//选择器i  or R
 rf       a_rf( .Clk(clk), .WrEn(RegWr&!overflow), .Ra(ins[25:21]), .Rb(ins[20:16]), .Rw(Rw), .busW(busW), .busA(busA), .busB(busB));
 //ALU
 ext      #(16,32) a_ext( .Extop(ExtOp), .a(ins[15:0]), .y(imm16Ext));

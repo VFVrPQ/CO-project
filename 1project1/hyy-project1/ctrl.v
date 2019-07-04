@@ -32,7 +32,7 @@ always @(*)begin
     
     case(op)
     R:begin//R  add,sub,addu,slt,or,and
-        assign RegWr    = 1;
+        assign RegWr    = (func==6'b001000) ? 0:1;
        // assign RegDst   = 01; 
         assign ExtOp    = 0;//x
         assign ALUSrc   = 0;
