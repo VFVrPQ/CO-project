@@ -32,9 +32,13 @@ wire[31:0]  Ex_ins;
 wire[31:2]  Ex_pc;
 wire[31:0]  Ex_busA;
 wire[31:0]  Ex_busB;
+wire[31:0]  Ex_mux3_busA;
+wire[31:0]  Ex_mux3_busB;
 wire[31:0]  Ex_mux_busBB;
+wire[31:0]  Ex_mux_din;
 wire[31:0]  Ex_imm16Ext;
 wire[15:0]  Ex_imm16;
+wire[4:0]   Ex_Rs;
 wire[4:0]   Ex_Rt;
 wire[4:0]   Ex_Rd;
 wire[4:0]   Ex_mux_Rw;
@@ -60,6 +64,7 @@ wire[31:2]  Mem_pc;
 wire[4:0]   Mem_Rw;
 wire[31:0]  Mem_aluout;
 wire[31:0]  Mem_busA;
+wire[31:0]  Mem_busB;
 wire[31:0]  Mem_dout;
 wire[31:0]  Mem_din;
 
@@ -84,6 +89,11 @@ wire[4:0]   Wr_Rw;
 wire        Wr_RegWr;
 wire[1:0]   Wr_MemtoReg;
 wire        Wr_Overflow;
+
+//forwarding  solve
+wire[1:0]   ALUSrcA;
+wire[1:0]   ALUSrcB;
+wire[1:0]   ALUSrcDin;
 
 //get pc
 pc       a_pc(  .PC(PC), 
@@ -151,6 +161,7 @@ id_ex   a_id_ex(    clk,
                     ID_busA,
                     ID_busB,
                     ID_imm16,
+                    ID_Ra,
                     ID_Rb,
                     ID_Rw,
                     ID_ExtOp,
@@ -167,6 +178,7 @@ id_ex   a_id_ex(    clk,
                     Ex_busA,
                     Ex_busB,
                     Ex_imm16,
+                    Ex_Rs,
                     Ex_Rt,
                     Ex_Rd,
                     Ex_ExtOp,
@@ -186,13 +198,39 @@ ext      #(16,32) a_ext(    .Extop     (Ex_ExtOp),
                             .a         (Ex_imm16), 
                             .y         (Ex_imm16Ext)
                         );
+/*********forwarding*********/
+forwarding a_forwarding_alu(   Ex_Rs,
+                               Ex_Rt,
+                               Mem_Rw,
+                               Mem_RegWr,
+                               Wr_Rw,
+                               Wr_RegWr,
+                               ALUSrcA,
+                               ALUSrcB,
+                               ALUSrcDin
+);
+
+
+//get Ex_mux3_busA
+MUX3     a_mux3_busA(    .a(Ex_busA),
+                         .b(Mem_aluout),
+                         .c(Wr_busW),
+                         .ctr(ALUSrcA),
+                         .y(Ex_mux3_busA));
+
+//get Ex_mux3_busB
+MUX3     a_mux3_busB(    .a(Ex_busB),
+                         .b(Mem_aluout),
+                         .c(Wr_busW),
+                         .ctr(ALUSrcB),
+                         .y(Ex_mux3_busB));
 //get Ex_mux_busBB
-MUX2     a_MUX2_busBB( .a     (Ex_busB), 
+MUX2     a_MUX2_busBB( .a     (Ex_mux3_busB), 
                        .b     (Ex_imm16Ext), 
                        .ctr   (Ex_ALUSrc), 
                        .y     (Ex_mux_busBB));
 //get Ex_aluout
-ALU      a_ALU  (   .A         (Ex_busA), 
+ALU      a_ALU  (   .A         (Ex_mux3_busA), 
                     .B         (Ex_mux_busBB), 
                     .C         (Ex_ins[10:6]), 
                     .ALUctr    (Ex_ALUctr), 
@@ -200,6 +238,13 @@ ALU      a_ALU  (   .A         (Ex_busA),
                     .overflow  (Ex_overflow), 
                     .result    (Ex_aluout)
                 );
+//get Mem_din
+MUX3     a_MUX2_Mem_din(   .a(Ex_busB),
+                           .b(Mem_aluout),
+                           .c(Wr_busW),
+                           .ctr(ALUSrcDin),
+                           .y(Ex_mux_din));
+
 //get address of datain
 MUX3    #(5) a_MUX3_Rw (    .a     (Ex_Rt), 
                         .b     (Ex_Rd), 
@@ -216,7 +261,7 @@ ex_mem      a_ex_mem(   clk,
                         Ex_overflow,
                         Ex_aluout,
                         Ex_busA,
-                        Ex_busB,
+                        Ex_mux_din,
                         Ex_mux_Rw,
                         Ex_RegWr,
                         Ex_MemtoReg,
@@ -239,7 +284,7 @@ ex_mem      a_ex_mem(   clk,
 );
 /*********Mem*********/
 //judge pc_br  or  pc_ju
-//get address of branch or jump  and Mem_pc_ctrl
+//get address of branch or jump  
 npc     a_npc(      .busA        (Mem_busA), 
                     .imm16       (Mem_ins[15:0]), 
                     .branch      (Mem_Branch), 

@@ -229,7 +229,7 @@ always @(posedge Clk)begin
     end
     
     SB:begin
-        assign RegWr    = 1;
+        assign RegWr    = 0;
         assign RegDst   = 00;//x
         assign ExtOp    = 1;
         assign ALUSrc   = 1;

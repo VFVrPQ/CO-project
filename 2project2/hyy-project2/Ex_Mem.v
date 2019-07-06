@@ -1,5 +1,5 @@
 module ex_mem    ( clk, Ex_ins, Ex_pc, Ex_zero, Ex_overflow, Ex_aluout, 
-                   Ex_busA/*begz bgtz blez bltz*/, Ex_busB, Ex_mux_Rw, Ex_RegWr, Ex_MemtoReg, Ex_MemWr, Ex_Branch, Ex_Jump,
+                   Ex_busA/*begz bgtz blez bltz*/, Ex_mux_din, Ex_mux_Rw, Ex_RegWr, Ex_MemtoReg, Ex_MemWr, Ex_Branch, Ex_Jump,
                    Mem_ins, Mem_pc, Mem_zero, Mem_overflow, Mem_aluout,
                    Mem_busA, Mem_din, Mem_Rw, Mem_RegWr, Mem_MemtoReg, Mem_MemWr, Mem_Branch, Mem_Jump  );
 
@@ -11,7 +11,7 @@ input       Ex_overflow;
 input[31:0] Ex_aluout;
 
 input[31:0] Ex_busA;
-input[31:0] Ex_busB;
+input[31:0] Ex_mux_din;
 input[4:0]  Ex_mux_Rw;
 
 input       Ex_RegWr;
@@ -60,7 +60,7 @@ begin
     Mem_overflow     <= Ex_overflow;
     Mem_aluout       <= Ex_aluout;
     Mem_busA         <= Ex_busA;
-    Mem_din          <= Ex_busB;
+    Mem_din          <= Ex_mux_din;
     Mem_Rw           <= Ex_mux_Rw;
     Mem_RegWr        <= Ex_RegWr;
     Mem_MemtoReg     <= Ex_MemtoReg;

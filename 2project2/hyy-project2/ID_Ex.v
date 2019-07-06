@@ -1,7 +1,7 @@
 module id_ex   (    clk, ID_pc,  ID_ins,  ID_busA, ID_busB, ID_imm16, 
-                    ID_Rb, ID_Rw, ID_ExtOp, ID_ALUSrc, ID_RegDst, ID_MemWr, ID_Branch, ID_Jump, ID_MemtoReg, ID_RegWr, ID_ALUctr,
+                    ID_Ra, ID_Rb, ID_Rw, ID_ExtOp, ID_ALUSrc, ID_RegDst, ID_MemWr, ID_Branch, ID_Jump, ID_MemtoReg, ID_RegWr, ID_ALUctr,
                     Ex_pc, Ex_ins, Ex_busA, Ex_busB, Ex_imm16,
-                    Ex_Rt, Ex_Rd, Ex_ExtOp, Ex_ALUSrc, Ex_RegDst, Ex_MemWr, Ex_Branch, Ex_Jump, Ex_MemtoReg, Ex_RegWr, Ex_ALUctr );
+                    Ex_Rs, Ex_Rt, Ex_Rd, Ex_ExtOp, Ex_ALUSrc, Ex_RegDst, Ex_MemWr, Ex_Branch, Ex_Jump, Ex_MemtoReg, Ex_RegWr, Ex_ALUctr );
 
 input clk;
 input[31:2] ID_pc;
@@ -10,6 +10,7 @@ input[31:0] ID_busA;
 input[31:0] ID_busB;
 input[15:0] ID_imm16;
 
+input[4:0] ID_Ra;
 input[4:0] ID_Rb;
 input[4:0] ID_Rw;
 
@@ -29,6 +30,7 @@ output reg [31:0] Ex_busA;
 output reg [31:0] Ex_busB;
 output reg [15:0] Ex_imm16;
 
+output reg [4:0] Ex_Rs;
 output reg [4:0] Ex_Rt;
 output reg [4:0] Ex_Rd;
 
@@ -49,6 +51,7 @@ initial begin
     Ex_busA       = 32'd0;
     Ex_busB       = 32'd0;
     Ex_imm16      = 16'd0;
+    Ex_Rs         = 5'd0;
     Ex_Rt         = 5'd0;
     Ex_Rd         = 5'd0;
 
@@ -70,6 +73,7 @@ always @(negedge clk)
              Ex_ins       <= ID_ins;
              Ex_busA      <= ID_busA;
              Ex_busB      <= ID_busB;
+             Ex_Rs        <= ID_Ra;
              Ex_Rt        <= ID_Rb;
              Ex_Rd        <= ID_Rw;
              Ex_imm16     <= ID_imm16;

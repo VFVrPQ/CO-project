@@ -5,12 +5,9 @@ module rf(Clk,WrEn,Ra,Rb,Rw,busW,busA,busB);
 input Clk,WrEn;
 input [4:0]Rw,Ra,Rb;
 input [31:0]busW;
-output [31:0]busA,busB;
+output reg [31:0]busA,busB;
 
 reg[31:0] Rf[31:0];
-
-assign busA = (Ra != 0) ? Rf[Ra] : 0;
-assign busB = (Rb != 0) ? Rf[Rb] : 0;
 
 integer i;
 
@@ -33,8 +30,15 @@ begin
 end
 
 always @ (negedge Clk)
+begin
 	if(WrEn)
 		Rf[Rw] <= busW;
-
+end
+	
+always @ (posedge Clk)
+begin
+	busA <= (Ra != 0) ? Rf[Ra] : 0;
+    busB <= (Rb != 0) ? Rf[Rb] : 0;
+end
 endmodule
 
